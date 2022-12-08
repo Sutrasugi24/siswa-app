@@ -35,13 +35,13 @@
         <table class="table table-report -mt-2">
             <thead>
                 <tr>
-                    <th class="text-center whitespace-nowrap">Nama</th>
-                    <th class="text-center whitespace-nowrap">Nomor Induk Siswa</th>
-                    <th class="text-center whitespace-nowrap">NISN</th>
-                    <th class="text-center whitespace-nowrap">Kelas</th>
-                    <th class="text-center whitespace-nowrap">Tahun</th>
-                    <th class="text-center whitespace-nowrap">Ijazah</th>
-                    <th class="text-center whitespace-nowrap">SKHUN</th>
+                    <th class="whitespace-nowrap">Nama</th>
+                    <th class="whitespace-nowrap">Nomor Induk Siswa</th>
+                    <th class="whitespace-nowrap">NISN</th>
+                    <th class="whitespace-nowrap">Kelas</th>
+                    <th class="whitespace-nowrap">Tahun</th>
+                    <th class="whitespace-nowrap">Ijazah</th>
+                    <th class="whitespace-nowrap">SKHUN</th>
                     <th class="text-center whitespace-nowrap">STATUS</th>
                     <th class="text-center whitespace-nowrap">ACTIONS</th>
                 </tr>
@@ -51,11 +51,11 @@
                     <tr class="intro-x">
                         <td class="font-medium ">{{ $student->nama }}</td>
                         <td class="font-medium ">{{ $student->nis }}</td>
-                        <td class="font-medium text-center">{{ $student->nisn }}</td>
-                        <td class="font-medium text-center">{{ $student->kelas }}</td>
-                        <td class="font-medium text-center">{{ $student->tahun }}</td>
-                        <td class="font-medium text-center">{{ $student->ijazah }}</td>
-                        <td class="font-medium text-center">{{ $student->skhun }}</td>
+                        <td class="font-medium ">{{ $student->nisn }}</td>
+                        <td class="font-medium ">{{ $student->kelas }}</td>
+                        <td class="font-medium ">{{ $student->tahun }}</td>
+                        <td class="font-medium ">{{ $student->ijazah }}</td>
+                        <td class="font-medium ">{{ $student->skhun }}</td>
                         <td class="w-40">
                             <div class="flex items-center justify-center {{ $student['status'][0] ? 'text-success' : 'text-danger' }}">
                                 <i data-lucide="check-square" class="w-4 h-4 mr-2"></i> {{ $student['status'][0] ? 'Active' : 'Inactive' }}

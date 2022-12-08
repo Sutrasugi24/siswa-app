@@ -48,8 +48,8 @@
             <!-- BEGIN: Side Menu -->
             <nav class="side-nav">
                 <a href="" class="intro-x flex items-center pl-5 pt-4 mt-3">
-                    <img alt="Midone - HTML Admin Template" class="w-6" src="dist/images/logo.svg">
-                    <span class="hidden xl:block text-white text-lg ml-3"> Tinker </span> 
+                    <img alt="" class="w-6" src="/dist/images/logo.svg">
+                    <span class="hidden xl:block text-white text-lg ml-3"> SMAN 6 Cimahi </span> 
                 </a>
                 <div class="side-nav__devider my-6"></div>
                 <ul>
@@ -125,62 +125,33 @@
                                 <div class="mb-5">
                                     <a href="" class="flex items-center mt-2">
                                         <div class="w-8 h-8 image-fit">
-                                            <img alt="Midone - HTML Admin Template" class="rounded-full" src="dist/images/profile-2.jpg">
+                                            <img alt="Midone - HTML Admin Template" class="rounded-full" src="/dist/images/profile-2.jpg">
                                         </div>
                                         <div class="ml-3">Keanu Reeves</div>
                                         <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">keanureeves@left4code.com</div>
                                     </a>
                                     <a href="" class="flex items-center mt-2">
                                         <div class="w-8 h-8 image-fit">
-                                            <img alt="Midone - HTML Admin Template" class="rounded-full" src="dist/images/profile-3.jpg">
+                                            <img alt="Midone - HTML Admin Template" class="rounded-full" src="/dist/images/profile-3.jpg">
                                         </div>
                                         <div class="ml-3">Angelina Jolie</div>
                                         <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">angelinajolie@left4code.com</div>
                                     </a>
                                     <a href="" class="flex items-center mt-2">
                                         <div class="w-8 h-8 image-fit">
-                                            <img alt="Midone - HTML Admin Template" class="rounded-full" src="dist/images/profile-13.jpg">
+                                            <img alt="Midone - HTML Admin Template" class="rounded-full" src="/dist/images/profile-13.jpg">
                                         </div>
                                         <div class="ml-3">Brad Pitt</div>
                                         <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">bradpitt@left4code.com</div>
                                     </a>
                                     <a href="" class="flex items-center mt-2">
                                         <div class="w-8 h-8 image-fit">
-                                            <img alt="Midone - HTML Admin Template" class="rounded-full" src="dist/images/profile-4.jpg">
+                                            <img alt="Midone - HTML Admin Template" class="rounded-full" src="/dist/images/profile-4.jpg">
                                         </div>
                                         <div class="ml-3">John Travolta</div>
                                         <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">johntravolta@left4code.com</div>
                                     </a>
                                 </div>
-                                <div class="search-result__content__title">Products</div>
-                                <a href="" class="flex items-center mt-2">
-                                    <div class="w-8 h-8 image-fit">
-                                        <img alt="Midone - HTML Admin Template" class="rounded-full" src="dist/images/preview-1.jpg">
-                                    </div>
-                                    <div class="ml-3">Apple MacBook Pro 13</div>
-                                    <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">PC &amp; Laptop</div>
-                                </a>
-                                <a href="" class="flex items-center mt-2">
-                                    <div class="w-8 h-8 image-fit">
-                                        <img alt="Midone - HTML Admin Template" class="rounded-full" src="dist/images/preview-7.jpg">
-                                    </div>
-                                    <div class="ml-3">Dell XPS 13</div>
-                                    <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">PC &amp; Laptop</div>
-                                </a>
-                                <a href="" class="flex items-center mt-2">
-                                    <div class="w-8 h-8 image-fit">
-                                        <img alt="Midone - HTML Admin Template" class="rounded-full" src="dist/images/preview-1.jpg">
-                                    </div>
-                                    <div class="ml-3">Samsung Galaxy S20 Ultra</div>
-                                    <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">Smartphone &amp; Tablet</div>
-                                </a>
-                                <a href="" class="flex items-center mt-2">
-                                    <div class="w-8 h-8 image-fit">
-                                        <img alt="Midone - HTML Admin Template" class="rounded-full" src="dist/images/preview-3.jpg">
-                                    </div>
-                                    <div class="ml-3">Apple MacBook Pro 13</div>
-                                    <div class="ml-auto w-48 truncate text-slate-500 text-xs text-right">PC &amp; Laptop</div>
-                                </a>
                             </div>
                         </div>
                     </div>
