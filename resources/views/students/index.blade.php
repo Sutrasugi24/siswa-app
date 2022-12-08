@@ -1,4 +1,4 @@
-@extends('../layouts/main')
+@extends('templates.default')
 
 @section('content')
 <h2 class="intro-y text-lg font-medium mt-10 mb-4">{{ $title ?? 'Data Siswa' }}</h2>

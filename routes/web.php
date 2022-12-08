@@ -28,10 +28,6 @@ Route::get('/', function () {
 //     return view('students.index');
 // });
 
-Route::get('/home', function(){
-    return view('dashboard.index');
-});
-
 //Student Route
 Route::get('/students', [StudentController::class, 'index'])->name('students.index');
 Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');
