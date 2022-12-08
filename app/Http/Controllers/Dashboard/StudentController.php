@@ -4,10 +4,10 @@ namespace App\Http\Controllers\Dashboard;
 
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+use App\Models\Student;
 
 class StudentController extends Controller
 {
-
     /**
      * Display a listing of the resource.
      *
@@ -15,9 +15,9 @@ class StudentController extends Controller
      */
     public function index()
     {
-        // return view('students.index', [
-        //     'students' => Student::get(),
-        // ]);
+        return view('students.index', [
+            'students' => Student::get(),
+        ]);
     }
 
     /**
@@ -27,7 +27,7 @@ class StudentController extends Controller
      */
     public function create()
     {
-        // return view('students.create');
+        return view('students.create');
     }
 
     /**
@@ -38,41 +38,41 @@ class StudentController extends Controller
      */
     public function store(Request $request)
     {
-        // $this->validate($request, [
-        //     'nama' => ['required', 'min:3'],
-        //     'nis' => ['required', 'min:5', 'numeric'],
-        //     'nisn' => ['required', 'min:5','numeric'],
-        //     'kelas' => ['required', 'min:3'],
-        //     'tahun' => ['required', 'min:4', 'numeric'],
-        //     'ijazah' => ['required', 'min:5'],
-        //     'skhun' => ['required', 'min:5'],
+        $this->validate($request, [
+            'nama' => ['required', 'min:3'],
+            'nis' => ['required', 'min:5', 'numeric'],
+            'nisn' => ['required', 'min:5','numeric'],
+            'kelas' => ['required', 'min:3'],
+            'tahun' => ['required', 'min:4', 'numeric'],
+            'ijazah' => ['required', 'min:5'],
+            'skhun' => ['required', 'min:5'],
 
-        // ],[
-        //     'nama.required' => 'Kolom nama harus diisi.',
-        //     'nis.required' => 'Kolom Nomor Induk Siswa harus diisi.',
-        //     'nisn.required' => 'Kolom Nomor Induk Siswa harus diisi.',
-        //     'kelas.required' => 'Kolom Kelas harus diisi.',
-        //     'tahun.required' => 'Kolom Tahun harus diisi.',
-        //     'ijazah.required' =>'Kolom Ijazah harus diisi.',
-        //     'skhun.required' => 'Kolom SKHUN harus diisi.',
-        // ]);
+        ],[
+            'nama.required' => 'Kolom nama harus diisi.',
+            'nis.required' => 'Kolom Nomor Induk Siswa harus diisi.',
+            'nisn.required' => 'Kolom Nomor Induk Siswa harus diisi.',
+            'kelas.required' => 'Kolom Kelas harus diisi.',
+            'tahun.required' => 'Kolom Tahun harus diisi.',
+            'ijazah.required' =>'Kolom Ijazah harus diisi.',
+            'skhun.required' => 'Kolom SKHUN harus diisi.',
+        ]);
 
-        // $student = new Student();
+        $student = new Student();
 
-        // $student->nama = $request->nama;
-        // $student->nis = $request->nis;
-        // $student->nisn = $request->nisn;
-        // $student->kelas = $request->kelas;
-        // $student->tahun = $request->tahun;
-        // $student->ijazah = $request->ijazah;
-        // $student->skhun = $request->skhun;
-        // $student->status = $request->status;
+        $student->nama = $request->nama;
+        $student->nis = $request->nis;
+        $student->nisn = $request->nisn;
+        $student->kelas = $request->kelas;
+        $student->tahun = $request->tahun;
+        $student->ijazah = $request->ijazah;
+        $student->skhun = $request->skhun;
+        $student->status = $request->status;
 
-        // $student->save();
+        $student->save();
 
-        // session()->flash('success', 'Data Berhasil Ditambahkan');
+        session()->flash('success', 'Data Berhasil Ditambahkan');
 
-        // return redirect()->route('students.index');
+        return redirect()->route('students.index');
     }
 
     /**
@@ -94,11 +94,11 @@ class StudentController extends Controller
      */
     public function edit($id)
     {
-        // $student = Student::find($id);
+        $student = Student::find($id);
 
-        // return view('students.edit',[
-        //     'student' => $student,
-        // ]);
+        return view('students.edit',[
+            'student' => $student,
+        ]);
     }
 
     /**
@@ -110,23 +110,23 @@ class StudentController extends Controller
      */
     public function update(Request $request, $id)
     {
-        // $student = Student::find($id);
+        $student = Student::find($id);
 
 
-        // $student->nama = $request->nama;
-        // $student->nis = $request->nis;
-        // $student->nisn = $request->nisn;
-        // $student->kelas = $request->kelas;
-        // $student->tahun = $request->tahun;
-        // $student->ijazah = $request->ijazah;
-        // $student->skhun = $request->skhun;
-        // $student->status = $request->status;
+        $student->nama = $request->nama;
+        $student->nis = $request->nis;
+        $student->nisn = $request->nisn;
+        $student->kelas = $request->kelas;
+        $student->tahun = $request->tahun;
+        $student->ijazah = $request->ijazah;
+        $student->skhun = $request->skhun;
+        $student->status = $request->status;
 
-        // $student->save();
+        $student->save();
 
-        // session()->flash('info', 'Data Berhasil Diperbarui');
+        session()->flash('info', 'Data Berhasil Diperbarui');
 
-        // return redirect()->route('students.index');
+        return redirect()->route('students.index');
     }
 
     /**
@@ -137,12 +137,12 @@ class StudentController extends Controller
      */
     public function destroy($id)
     {
-        // $student = Student::find($id);
+        $student = Student::find($id);
 
-        // $student->delete();
+        $student->delete();
 
-        // session()->flash('danger', 'Data Berhasil Dihapus');
+        session()->flash('danger', 'Data Berhasil Dihapus');
 
-        // return redirect()->route('students.index');
+        return redirect()->route('students.index');
     }
 }
