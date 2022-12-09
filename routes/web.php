@@ -21,13 +21,15 @@ use Illuminate\Support\Facades\Route;
 // });
 
 Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-
-Route::get('/home', function (){
     return view('dashboard.index');
-});
+})->middleware(['auth', 'verified'])->name('dashboard.index');
+
+
+// Route::get('/home', function (){
+//     return view('dashboard.index');
+// });
+
+Route::get('/users', [UserController::class, 'index'])->name('users.index');
 
 
 

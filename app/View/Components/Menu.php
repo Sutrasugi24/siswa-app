@@ -3,6 +3,7 @@
 namespace App\View\Components;
 
 use Illuminate\View\Component;
+use App\Http\Controllers\Dashboard\DashboardController;
 
 class Menu extends Component
 {
@@ -11,13 +12,13 @@ class Menu extends Component
      *
      * @return void
      */
-    public $nama;
+    //public $active;
 
 
     
-    public function __construct($nama)
+    public function __construct()
     {
-        $this->nama = $nama;
+      //  $this->active = $active;
     }
 
     /**
@@ -27,10 +28,37 @@ class Menu extends Component
      */
     public function render()
     {
+        $list = $this->list();
 
+        return view('components.menu',[
+            'list' => $list,    
+            //'active' => $this->active
+        ]);
+    }
 
+    public function list()
+    {
+        return [
+            [
+                'label' => 'Dashboard',
+                'link' => 'dashboard',
+                'route' => 'dashboard.index',
+                'icon' =>  'gauge'
+            ],
+            [
+                'label' => 'Siswa',
+                'link' => 'students',
+                'route' => 'students.index',
+                'icon' => 'graduation-cap'
 
+            ],
+            [
+                'label' => 'User',
+                'link' => 'users',
+                'route' => 'users.index',
+                'icon' => 'users'
 
-        return view('components.menu');
+            ]
+        ];
     }
 }

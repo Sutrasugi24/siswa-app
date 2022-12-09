@@ -46,7 +46,13 @@
         <!-- END: Mobile Menu -->
         <div class="flex mt-[4.7rem] md:mt-0 overflow-hidden">
             <!-- BEGIN: Side Menu -->
-            @include('components.menu')
+            <nav class="side-nav">
+                <a href="" class="intro-x flex items-center pl-5 pt-4 mt-3">
+                    <img alt="" class="w-6" src="/dist/images/logo.svg">
+                    <span class="hidden xl:block text-white text-lg ml-3"> SMAN 6 Cimahi </span> 
+                </a>
+                <x-menu/>
+            </nav>
             <!-- END: Side Menu -->
             <!-- BEGIN: Content -->
             <div class="content">
