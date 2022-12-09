@@ -51,11 +51,11 @@
                         </div>
                         <div class="form-check inline-block">
                             <input type="radio" name="status" class="form-check-input" value="active" id="active" @if((old('status') ?? $student->status ?? '') == 'active') checked @endif>
-                            <label for="active" class="form-check-label">Active</label>
+                            <label for="active" class="form-check-label">Aktif</label>
                         </div>
                         <div class="form-check inline-block">
                             <input type="radio" name="status" class="form-check-input" value="inactive" id="inactive" @if((old('status') ?? $student->status ?? '') == 'inactive') checked @endif>
-                            <label for="inactive" class="form-check-label">Inactive</label>
+                            <label for="inactive" class="form-check-label">Tidak Aktif</label>
                         </div>
                     </div>
                     <br />
