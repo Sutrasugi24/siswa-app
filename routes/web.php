@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\Dashboard\StudentController;
+use App\Http\Controllers\Dashboard\LayoutController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -15,26 +16,30 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
-
-// Route::get('/dashboard', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
-
-
-// Route::get('/students', function(){
-//     return view('students.index');
+// Route::get('/', function () {
+//     return view('welcome');
 // });
 
+Route::get('/dashboard', function () {
+    return view('dashboard');
+})->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::get('/home', function (){
+    return view('dashboard.index');
+});
+
+
+
 //Student Route
-Route::get('/students', [StudentController::class, 'index'])->name('students.index');
-Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');
-Route::post('/students', [StudentController::class, 'store'])->name('students.store');
-Route::get('/students/{id}/edit', [StudentController::class, 'edit'])->name('students.edit');
-Route::put('/students/{id}', [StudentController::class, 'update'])->name('students.update');
-Route::delete('/students/{id}', [StudentController::class, 'destroy'])->name('students.destroy');
+Route::controller(StudentController::class)->group(function(){
+    Route::get('/students', [StudentController::class, 'index'])->name('students.index');
+    Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');
+    Route::post('/students', [StudentController::class, 'store'])->name('students.store');
+    Route::get('/students/{id}/edit', [StudentController::class, 'edit'])->name('students.edit');
+    Route::put('/students/{id}', [StudentController::class, 'update'])->name('students.update');
+    Route::delete('/students/{id}', [StudentController::class, 'destroy'])->name('students.destroy');
+});
 
 
 Route::middleware('auth')->group(function () {

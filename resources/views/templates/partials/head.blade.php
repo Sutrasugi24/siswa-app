@@ -8,6 +8,7 @@
     <title>SMAN 6 Cimahi</title>
     <!-- BEGIN: CSS Assets-->
     <link rel="stylesheet" href="{{ asset('/dist/css/app.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/fonts/roboto/') }}" />
     <link href="{{ asset('/dist/images/logo.svg') }}" rel="shortcut icon">
     <!-- END: CSS Assets-->
 <!-- END: Head -->
