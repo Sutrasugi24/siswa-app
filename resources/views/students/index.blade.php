@@ -22,7 +22,7 @@
 <div class="grid grid-cols-12 gap-6 mt-5">
     <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
         <a href="{{ route('students.create') }}" class="btn btn-primary shadow-md mr-2">Tambah Data <i class="w-5 h-5 " data-lucide="plus"></i></a>
-        <div class="hidden md:block mx-auto text-slate-500">Showing 1 to 10 of 150 entries</div>
+        <div class="hidden md:block mx-auto text-slate-500"></div>
         <div class="w-full sm:w-auto mt-3 sm:mt-0 sm:ml-auto md:ml-0">
             <form class="w-56 relative text-slate-500" method="get">
                 <div class="form-group">
@@ -37,23 +37,25 @@
         <table class="table table-report -mt-2">
             <thead>
                 <tr>
-                    <th class="whitespace-nowrap">@sortablelink('nama', 'Nama')</th>
-                    <th class="whitespace-nowrap">Nomor Induk Siswa</th>
-                    <th class="whitespace-nowrap">NISN</th>
-                    <th class="whitespace-nowrap">@sortablelink('kelas', 'Kelas')</th>
-                    <th class="whitespace-nowrap">Tahun</th>
-                    <th class="whitespace-nowrap">Ijazah</th>
-                    <th class="whitespace-nowrap">SKHUN</th>
-                    <th class="text-center whitespace-nowrap">@sortablelink('status', 'Status')</th>
-                    <th class="text-center whitespace-nowrap">ACTIONS</th>
+                    <th class="whitespace-wrap">No</th>
+                    <th class="whitespace-wrap">@sortablelink('nama', 'Nama')</th>
+                    <th class="whitespace-wrap">NIS</th>
+                    <!--<th class="whitespace-nowrap">NISN</th>-->
+                    <th class="whitespace-wrap">@sortablelink('kelas', 'Kelas')</th>
+                    <th class="whitespace-wrap">Tahun</th>
+                    <th class="whitespace-wrap">Ijazah</th>
+                    <th class="whitespace-wrap">SKHUN</th>
+                    <th class="text-center whitespace-wrap">@sortablelink('status', 'Status')</th>
+                    <th class="text-center whitespace-wrap">ACTIONS</th>
                 </tr>
             </thead>
             <tbody>
                 @foreach ($students as $student)
                     <tr class="intro-x">
+                        <td class="font-medium ">{{ ($students->currentPage()- 1) * $students->perPage() + $loop->iteration }}</td>
                         <td class="font-medium ">{{ $student->nama }}</td>
                         <td class="font-medium ">{{ $student->nis }}</td>
-                        <td class="font-medium ">{{ $student->nisn }}</td>
+                        <!--<td class="font-medium ">{{ $student->nisn }}</td>-->
                         <td class="font-medium ">{{ $student->kelas }}</td>
                         <td class="font-medium ">{{ $student->tahun }}</td>
                         <td class="font-medium ">{{ $student->ijazah }}</td>

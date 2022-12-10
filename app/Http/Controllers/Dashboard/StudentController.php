@@ -30,9 +30,9 @@ class StudentController extends Controller
             ->orWhere('students.tahun', 'like', '%'.$search.'%')
             ->orWhere('students.ijazah', 'like', '%'.$search.'%')
             ->orWhere('students.skhun', 'like', '%'.$search.'%')
-            ->paginate(3)->onEachSide(1)->fragment('siswa');
+            ->paginate(1)->onEachSide(5)->fragment('siswa');
         }else{
-            $studentsData = Student::sortable()->paginate(3)->onEachSide(1)->fragment('siswa');
+            $studentsData = Student::sortable()->paginate(5)->onEachSide(1)->fragment('siswa');
         }
 
         //$student = Student::sortable()->paginate(5)->onEachSide(1)->fragment('siswa');
@@ -133,7 +133,6 @@ class StudentController extends Controller
     public function update(Request $request, $id)
     {
         $student = Student::find($id);
-
 
         $student->nama = $request->nama;
         $student->nis = $request->nis;
