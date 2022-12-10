@@ -58,7 +58,7 @@
                         <td class="font-medium ">{{ $student->skhun }}</td>
                         <td class="w-40">
                             <div class="flex items-center {{ $student['status'] == 'active' ? 'text-success' : 'text-danger' }}">
-                                <i data-lucide="check-square" class="w-4 h-4 mr-2"></i> {{ $student['status'] == 'active' ? 'Aktif' : 'Tidak Aktif' }}
+                                <i data-lucide="{{ $student['status'] == 'active' ? 'check-square' : 'x-square' }}" class="w-4 h-4 mr-2"></i> {{ $student['status'] == 'active' ? 'Telah Diambil' : 'Belum Diambil' }}
                             </div>
                         </td>
                         <td class="table-report__action w-56">

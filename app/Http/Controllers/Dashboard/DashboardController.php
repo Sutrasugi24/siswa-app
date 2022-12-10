@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers\Dashboard;
 
-use App\Http\Controllers\Controller;
+use App\Models\User;
+use App\Models\Student;
 use Illuminate\Http\Request;
+use App\Http\Controllers\Controller;
 use App\Http\Controllers\Dashboard\DashboardController;
 
 class DashboardController extends Controller
@@ -15,8 +17,16 @@ class DashboardController extends Controller
      */
     public function index()
     {
+        $studentCount = Student::count();
+        $studentActive = Student::where('status', 'active')->get()->count();
+        $studentInactive = Student::where('status', 'inactive')->get()->count();
+        $userCount = User::count();
+        return view('dashboard.index', [
+            'student_count' => $studentCount,
+            'student_active' => $studentActive,
+            'student_inactive' => $studentInactive,
+            'user_count' => $userCount]);
 
-        return view('dashboard.index');
     }
 
     /**
