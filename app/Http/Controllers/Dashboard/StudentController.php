@@ -17,11 +17,28 @@ class StudentController extends Controller
      *
      * @return \Illuminate\Http\Response
      */
-    public function index()
+    public function index(Request $request)
     {
-        $student = Student::sortable()->paginate(5)->onEachSide(1)->fragment('siswa');
-        return view('students.index', [
-            'students' => $student, 
+        $search = $request->query('search');
+
+        if(!empty($search)){
+            $studentsData = Student::sortable()
+            ->where('students.nama', 'like', '%'.$search.'%')
+            ->orWhere('students.nis', 'like', '%'.$search.'%')
+            ->orWhere('students.nisn', 'like', '%'.$search.'%')
+            ->orWhere('students.kelas', 'like', '%'.$search.'%')
+            ->orWhere('students.tahun', 'like', '%'.$search.'%')
+            ->orWhere('students.ijazah', 'like', '%'.$search.'%')
+            ->orWhere('students.skhun', 'like', '%'.$search.'%')
+            ->paginate(3)->onEachSide(1)->fragment('siswa');
+        }else{
+            $studentsData = Student::sortable()->paginate(3)->onEachSide(1)->fragment('siswa');
+        }
+
+        //$student = Student::sortable()->paginate(5)->onEachSide(1)->fragment('siswa');
+        return view('students.index')->with([
+            'students' => $studentsData,
+            'search' => $search,
         ]);
     }
 

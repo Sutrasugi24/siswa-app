@@ -24,10 +24,12 @@
         <a href="{{ route('students.create') }}" class="btn btn-primary shadow-md mr-2">Tambah Data <i class="w-5 h-5 " data-lucide="plus"></i></a>
         <div class="hidden md:block mx-auto text-slate-500">Showing 1 to 10 of 150 entries</div>
         <div class="w-full sm:w-auto mt-3 sm:mt-0 sm:ml-auto md:ml-0">
-            <div class="w-56 relative text-slate-500">
-                <input type="text" class="form-control w-56 box pr-10" placeholder="Search...">
-                <i class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0" data-lucide="search"></i>
-            </div>
+            <form class="w-56 relative text-slate-500" method="get">
+                <div class="form-group">
+                    <input type="text" name="search" id="search" class="form-control w-56 box pr-10" placeholder="Cari Data..." value="{{ $search }}">
+                    <i class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0" data-lucide="search"></i>
+                </div>
+            </form>
         </div>
     </div>
     <!-- BEGIN: Data List -->
