@@ -87,7 +87,8 @@
     <!-- BEGIN: Pagination -->
     <div class="intro-y col-span-12 mx-auto flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
         <nav class="w-full sm:w-auto sm:mr-auto">
-            <ul class="pagination">
+            {{ $students->links() }}
+            {{-- <ul class="pagination">
                 <li class="page-item">
                     <a class="page-link" href="#">
                         <i class="w-4 h-4" data-lucide="chevrons-left"></i>
@@ -123,14 +124,8 @@
                         <i class="w-4 h-4" data-lucide="chevrons-right"></i>
                     </a>
                 </li>
-            </ul>
+            </ul> --}}
         </nav>
-        <select class="w-20 form-select box mt-3 sm:mt-0">
-            <option>10</option>
-            <option>25</option>
-            <option>35</option>
-            <option>50</option>
-        </select>
     </div>
     <!-- END: Pagination -->
 </div>
