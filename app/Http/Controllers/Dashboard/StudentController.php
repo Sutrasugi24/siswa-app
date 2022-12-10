@@ -19,7 +19,7 @@ class StudentController extends Controller
      */
     public function index()
     {
-        $student = Student::paginate(5)->onEachSide(1)->fragment('siswa');
+        $student = Student::sortable()->paginate(5)->onEachSide(1)->fragment('siswa');
         return view('students.index', [
             'students' => $student, 
         ]);

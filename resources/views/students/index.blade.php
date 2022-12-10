@@ -35,14 +35,14 @@
         <table class="table table-report -mt-2">
             <thead>
                 <tr>
-                    <th class="whitespace-nowrap">Nama</th>
+                    <th class="whitespace-nowrap">@sortablelink('nama', 'Nama')</th>
                     <th class="whitespace-nowrap">Nomor Induk Siswa</th>
                     <th class="whitespace-nowrap">NISN</th>
-                    <th class="whitespace-nowrap">Kelas</th>
+                    <th class="whitespace-nowrap">@sortablelink('kelas', 'Kelas')</th>
                     <th class="whitespace-nowrap">Tahun</th>
                     <th class="whitespace-nowrap">Ijazah</th>
                     <th class="whitespace-nowrap">SKHUN</th>
-                    <th class="text-center whitespace-nowrap">STATUS</th>
+                    <th class="text-center whitespace-nowrap">@sortablelink('status', 'Status')</th>
                     <th class="text-center whitespace-nowrap">ACTIONS</th>
                 </tr>
             </thead>
@@ -87,44 +87,7 @@
     <!-- BEGIN: Pagination -->
     <div class="intro-y col-span-12 mx-auto flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
         <nav class="w-full sm:w-auto sm:mr-auto">
-            {{ $students->links() }}
-            {{-- <ul class="pagination">
-                <li class="page-item">
-                    <a class="page-link" href="#">
-                        <i class="w-4 h-4" data-lucide="chevrons-left"></i>
-                    </a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">
-                        <i class="w-4 h-4" data-lucide="chevron-left"></i>
-                    </a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">...</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">1</a>
-                </li>
-                <li class="page-item active">
-                    <a class="page-link" href="#">2</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">3</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">...</a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">
-                        <i class="w-4 h-4" data-lucide="chevron-right"></i>
-                    </a>
-                </li>
-                <li class="page-item">
-                    <a class="page-link" href="#">
-                        <i class="w-4 h-4" data-lucide="chevrons-right"></i>
-                    </a>
-                </li>
-            </ul> --}}
+            {!!$students->appends(Request::except('page'))->render()!!}
         </nav>
     </div>
     <!-- END: Pagination -->
