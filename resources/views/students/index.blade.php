@@ -33,7 +33,7 @@
         </div>
     </div>
     <!-- BEGIN: Data List -->
-    <div class="intro-y col-span-12 overflow-auto lg:overflow-visible">
+    <div class="intro-y col-span-12 overflow-auto w-full ">
         <table class="table table-report -mt-2">
             <thead>
                 <tr>
@@ -61,7 +61,7 @@
                         <td class="font-medium whitespace-wrap text-sm text-center">{{ $student->ijazah }}</td>
                         <td class="font-medium whitespace-wrap text-sm text-center">{{ $student->skhun }}</td>
                         <td class="w-40">
-                            <div class="flex whitespace-wrap items-center {{ $student['status'] == 'active' ? 'text-success' : 'text-danger' }}">
+                            <div class="flex whitespace-nowrap items-center {{ $student['status'] == 'active' ? 'text-success' : 'text-danger' }}">
                                 <i data-lucide="{{ $student['status'] == 'active' ? 'check-square' : 'x-square' }}" class="w-4 h-4 mr-2"></i> {{ $student['status'] == 'active' ? 'Telah Diambil' : 'Belum Diambil' }}
                             </div>
                         </td>

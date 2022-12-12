@@ -18,21 +18,16 @@ use App\Http\Controllers\Dashboard\UserController;
 |
 */
 
-Route::get('/welcome', function () {
-    return view('welcome');
-});
-
-Route::get('/home', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-
-
-// Route::get('/home', function (){
-//     return view('dashboard.index');
+// Route::get('/welcome', function () {
+//     return view('welcome');
 // });
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard.index');
+// Route::get('/home', function () {
+//     return view('dashboard');
+// })->middleware(['auth', 'verified'])->name('dashboard');
+
+
+Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard.index');
 
 
 
@@ -50,7 +45,7 @@ Route::controller(StudentController::class)->group(function(){
 //Users Route
 Route::controller(UserController::class)->group(function(){
     Route::get('/users', [UserController::class, 'index'])->name('users.index');
-    // Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
+    //Route::get('/users/create', [UserController::class, 'create'])->name('users.create');
     // Route::post('/users', [UserController::class, 'store'])->name('users.store');
     // Route::get('/users/{id}/edit', [UserController::class, 'edit'])->name('users.edit');
     // Route::put('/users/{id}', [UserController::class, 'update'])->name('users.update');
