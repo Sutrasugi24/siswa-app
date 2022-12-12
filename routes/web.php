@@ -31,6 +31,9 @@ Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'ver
 //Export PDF
 Route::get('/exportpdf', [DashboardController::class, 'exportpdf'])->name('exportpdf');
 
+//Export PDF
+Route::get('/exportexcel', [DashboardController::class, 'exportexcel'])->name('exportexcel');
+
 
 //Students Route
 Route::controller(StudentController::class)->group(function(){

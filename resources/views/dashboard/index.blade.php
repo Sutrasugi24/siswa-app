@@ -11,8 +11,8 @@
                         Laporan Keseluruhan
                     </h2>
                     <div class="flex items-center sm:ml-auto mt-3 sm:mt-0">
-                        <button class="btn box flex items-center text-slate-600 dark:text-slate-300"> <i
-                                data-lucide="download" class="hidden text-primary sm:block w-4 h-4 mr-2"></i> Excel</button>
+                        <a href="/exportexcel" class="btn box flex items-center text-slate-600 dark:text-slate-300"> <i
+                                data-lucide="download" class="hidden text-primary sm:block w-4 h-4 mr-2"></i> Excel</a>
                         <a href="/exportpdf" class="ml-3 btn box flex text primary items-center text-slate-600 dark:text-slate-300">
                             <i data-lucide="download" class="hidden text-primary sm:block w-4 h-4 mr-1"></i> PDF</a>
                     </div>

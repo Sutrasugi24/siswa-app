@@ -2,11 +2,13 @@
 
 namespace App\Http\Controllers\Dashboard;
 
+use PDF;
 use App\Models\User;
 use App\Models\Student;
-use PDF;
 use Illuminate\Http\Request;
+use App\Exports\StudentExport;
 use App\Http\Controllers\Controller;
+use Maatwebsite\Excel\Facades\Excel;
 use App\Http\Controllers\Dashboard\DashboardController;
 
 class DashboardController extends Controller
@@ -39,6 +41,10 @@ class DashboardController extends Controller
         return $pdf->download('data_siswa.pdf');
     }
 
+    public function exportexcel(){
+        return Excel::download(new StudentExport, 'datasiswa.xlsx');
+        
+    }
     /**
      * Show the form for creating a new resource.
      *
