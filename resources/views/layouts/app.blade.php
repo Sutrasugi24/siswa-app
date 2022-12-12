@@ -9,7 +9,10 @@
 
         <!-- Fonts -->
         <link rel="stylesheet" href="https://fonts.bunny.net/css2?family=Nunito:wght@400;600;700&display=swap">
-
+        <link rel="stylesheet" href="{{ asset('/dist/css/app.css') }}" />
+        <link rel="stylesheet" href="{{ asset('/fonts/roboto/') }}" />
+        <link href="{{ asset('/dist/images/logo.svg') }}" rel="shortcut icon">
+        
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
     </head>

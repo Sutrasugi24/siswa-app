@@ -32,7 +32,7 @@ Route::get('/home', function () {
 //     return view('dashboard.index');
 // });
 
-Route::get('/dashboard', [DashboardController::class, 'index'])->name('dashboard.index')->middleware(['auth', 'verified']);
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard.index');
 
 
 
