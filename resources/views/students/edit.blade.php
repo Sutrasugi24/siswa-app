@@ -10,9 +10,6 @@
         <form class="intro-y box" action="{{ route('students.update', $student->id) }}" method="post">
         @csrf
         @method('PUT')
-        <div class="flex flex-col sm:flex-row items-center p-5 border-b border-slate-200/60 dark:border-darkmode-400">
-            <h2 class="font-medium text-base mr-auto">Siswa</h2>
-        </div>
             <div id="input" class="p-5">
                 <div class="preview">
                     <div class="mt-3">

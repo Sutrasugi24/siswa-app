@@ -37,31 +37,31 @@
         <table class="table table-report -mt-2">
             <thead>
                 <tr>
-                    <th class="whitespace-wrap">No</th>
-                    <th class="whitespace-wrap">@sortablelink('nama', 'Nama')</th>
-                    <th class="whitespace-wrap">NIS</th>
-                    <!--<th class="whitespace-nowrap">NISN</th>-->
-                    <th class="whitespace-wrap">@sortablelink('kelas', 'Kelas')</th>
-                    <th class="whitespace-wrap">Tahun</th>
-                    <th class="whitespace-wrap">Ijazah</th>
-                    <th class="whitespace-wrap">SKHUN</th>
-                    <th class="text-center whitespace-wrap">@sortablelink('status', 'Status')</th>
-                    <th class="text-center whitespace-wrap">ACTIONS</th>
+                    <th class="whitespace-wrap text-sm text-center">No</th>
+                    <th class="whitespace-wrap text-sm text-center">@sortablelink('nama', 'Nama')</th>
+                    <th class="whitespace-wrap text-sm text-center">NIS</th>
+                    <th class="whitespace-nowrap text-sm text-center">NISN</th>
+                    <th class="whitespace-wrap text-sm text-center">@sortablelink('kelas', 'Kelas')</th>
+                    <th class="whitespace-wrap text-sm text-center">Tahun</th>
+                    <th class="whitespace-wrap text-sm text-center">Ijazah</th>
+                    <th class="whitespace-wrap text-sm text-center">SKHUN</th>
+                    <th class="text-center text-sm whitespace-wrap">@sortablelink('status', 'Status')</th>
+                    
                 </tr>
             </thead>
             <tbody>
                 @foreach ($students as $student)
                     <tr class="intro-x">
-                        <td class="font-medium ">{{ ($students->currentPage()- 1) * $students->perPage() + $loop->iteration }}</td>
-                        <td class="font-medium ">{{ $student->nama }}</td>
-                        <td class="font-medium ">{{ $student->nis }}</td>
-                        <!--<td class="font-medium ">{{ $student->nisn }}</td>-->
-                        <td class="font-medium ">{{ $student->kelas }}</td>
-                        <td class="font-medium ">{{ $student->tahun }}</td>
-                        <td class="font-medium ">{{ $student->ijazah }}</td>
-                        <td class="font-medium ">{{ $student->skhun }}</td>
+                        <td class="font-medium text-sm text-center">{{ ($students->currentPage()- 1) * $students->perPage() + $loop->iteration }}</td>
+                        <td class="font-medium whitespace-wrap text-sm text-center">{{ $student->nama }}</td>
+                        <td class="font-medium whitespace-wrap text-sm text-center">{{ $student->nis }}</td>
+                        <td class="font-medium whitespace-wrap text-sm text-center">{{ $student->nisn }}</td>
+                        <td class="font-medium whitespace-wrap text-sm text-center">{{ $student->kelas }}</td>
+                        <td class="font-medium whitespace-wrap text-sm text-center">{{ $student->tahun }}</td>
+                        <td class="font-medium whitespace-wrap text-sm text-center">{{ $student->ijazah }}</td>
+                        <td class="font-medium whitespace-wrap text-sm text-center">{{ $student->skhun }}</td>
                         <td class="w-40">
-                            <div class="flex items-center {{ $student['status'] == 'active' ? 'text-success' : 'text-danger' }}">
+                            <div class="flex whitespace-wrap items-center {{ $student['status'] == 'active' ? 'text-success' : 'text-danger' }}">
                                 <i data-lucide="{{ $student['status'] == 'active' ? 'check-square' : 'x-square' }}" class="w-4 h-4 mr-2"></i> {{ $student['status'] == 'active' ? 'Telah Diambil' : 'Belum Diambil' }}
                             </div>
                         </td>

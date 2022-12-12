@@ -12251,9 +12251,29 @@ html body{
     padding-right: 1.25rem;
     padding-bottom: 4rem;
 }
+
+@media (max-width: calc(1367px - 1px)) {
+  .side-nav {
+      width: 175px;
+  }
+  .side-menu__title{
+    display: none;
+  }
+}
+
+/* Width 1367 */
+
+
+
+
+/* End Width 1367 */
+
 @media (max-width: calc(1280px - 1px)) {
     .side-nav {
         width: 105px;
+    }
+    .side-menu__title{
+      display:none;
     }
   }
 @media (max-width: calc(768px - 1px)) {
@@ -18907,3 +18927,4 @@ html body{
         color: rgb(var(--color-success) / var(--tw-text-opacity));
     }
 }
+

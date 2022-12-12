@@ -8,7 +8,7 @@
         <div class="mobile-menu md:hidden">
             <div class="mobile-menu-bar">
                 <a href="" class="flex mr-auto">
-                    <img alt="Midone - HTML Admin Template" class="w-6" src="dist/images/logo.svg">
+                    <img alt="SMAN 6 Cimahi" class="w-6" src="dist/images/logo.svg">
                 </a>
                 <a href="javascript:;" class="mobile-menu-toggler"> <i data-lucide="bar-chart-2" class="w-8 h-8 text-white transform -rotate-90"></i> </a>
             </div>
@@ -18,20 +18,20 @@
                     <li>
                         <a href="/dashboard" class="menu menu--active">
                             <div class="menu__icon"> <i data-lucide="home"></i> </div>
-                            <div class="menu__title"> Dashboard</div>
+                            <div class="menu__title"> Dashboard</i> </div>
                         </a>
                     </li>
                     <li class="menu__devider my-6"></li>
                     <li>
                         <a href="/students" class="menu">
-                            <div class="menu__icon"> <i data-lucide="edit"></i> </div>
+                            <div class="menu__icon"> <i data-lucide="graduation-cap"></i> </div>
                             <div class="menu__title"> Siswa</div>
                         </a>
                     </li>
                     <li>
                         <a href="/users" class="menu">
-                            <div class="menu__icon"> <i data-lucide="users"></i></div>
-                            <div class="menu__title"> Siswa</div>
+                            <div class="menu__icon"> <i data-lucide="users"></i> </div>
+                            <div class="menu__title"> Users </div>
                         </a>
                     </li>
                 </ul>
@@ -60,19 +60,15 @@
                         </ol>
                     </nav>
                     <!-- END: Breadcrumb -->
-                    <!-- BEGIN: Search -->
-                    <div class="intro-x relative mr-3 sm:mr-5">
-                    </div>
-                    <!-- END: Search -->
                     <!-- BEGIN: Account Menu -->
                     <div class="intro-x dropdown w-8 h-8">
                         <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in" role="button" aria-expanded="false" data-tw-toggle="dropdown">
-                            <img alt="SMAN 6 Cimahi" src="dist/images/profile-5.jpg">
+                            <img alt="Midone - HTML Admin Template" src="dist/images/profile-5.jpg">
                         </div>
                         <div class="dropdown-menu w-56">
                             <ul class="dropdown-content bg-primary text-white">
                                 <li class="p-2">
-                                    <div class="font-medium">{{ Auth::user('name') }</div>
+                                    <div class="font-medium">Keanu Reeves</div>
                                     <div class="text-xs text-white/70 mt-0.5 dark:text-slate-500">Backend Engineer</div>
                                 </li>
                                 <li>
