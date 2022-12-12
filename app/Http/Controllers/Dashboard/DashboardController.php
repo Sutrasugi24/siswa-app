@@ -4,6 +4,7 @@ namespace App\Http\Controllers\Dashboard;
 
 use App\Models\User;
 use App\Models\Student;
+use PDF;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use App\Http\Controllers\Dashboard\DashboardController;
@@ -27,6 +28,15 @@ class DashboardController extends Controller
             'student_inactive' => $studentInactive,
             'user_count' => $userCount]);
 
+    }
+
+
+    public function exportpdf(){
+        $data = Student::all();
+
+        view()->share('data', $data);
+        $pdf = PDF::loadview('export.students-pdf');
+        return $pdf->download('data_siswa.pdf');
     }
 
     /**

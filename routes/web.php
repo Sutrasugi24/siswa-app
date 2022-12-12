@@ -18,17 +18,18 @@ use App\Http\Controllers\Dashboard\UserController;
 |
 */
 
-// Route::get('/welcome', function () {
-//     return view('welcome');
-// });
 
-// Route::get('/home', function () {
-//     return view('dashboard');
-// })->middleware(['auth', 'verified'])->name('dashboard');
+//To register
+Route::get('/register', function () {
+    return view('auth.register');
+});
 
-
+//Verified login
 Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard.index');
 
+
+//Export PDF
+Route::get('/exportpdf', [DashboardController::class, 'exportpdf'])->name('exportpdf');
 
 
 //Students Route

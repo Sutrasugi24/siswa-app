@@ -12,10 +12,9 @@
                     </h2>
                     <div class="flex items-center sm:ml-auto mt-3 sm:mt-0">
                         <button class="btn box flex items-center text-slate-600 dark:text-slate-300"> <i
-                                data-lucide="download" class="hidden sm:block w-4 h-4 mr-2"></i></button>
-                        <button
-                            class="ml-3 btn box flex items-center text-slate-600 dark:text-slate-300">
-                            <i data-lucide="file-text" class="hidden sm:block w-4 h-4 mr-1"></i> Unduh Data PDF </button>
+                                data-lucide="download" class="hidden text-primary sm:block w-4 h-4 mr-2"></i> Excel</button>
+                        <a href="/exportpdf" class="ml-3 btn box flex text primary items-center text-slate-600 dark:text-slate-300">
+                            <i data-lucide="download" class="hidden text-primary sm:block w-4 h-4 mr-1"></i> PDF</a>
                     </div>
                 </div>
                 <div class="grid grid-cols-12 gap-6 mt-5">
