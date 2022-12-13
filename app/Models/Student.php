@@ -11,6 +11,7 @@ class Student extends Model
     use HasFactory;
     use Sortable;
 
+
     public $sortable = [
         'nama', 'kelas', 'status',
     ];

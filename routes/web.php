@@ -43,6 +43,8 @@ Route::controller(StudentController::class)->group(function(){
     Route::get('/students/{id}/edit', [StudentController::class, 'edit'])->name('students.edit');
     Route::put('/students/{id}', [StudentController::class, 'update'])->name('students.update');
     Route::delete('/students/{id}', [StudentController::class, 'destroy'])->name('students.destroy');
+    Route::get('/students/{id}/ijazah', [StudentController::class, 'ijazah'])->name('students.ijazah');
+    Route::get('/students/{id}/skhun', [StudentController::class, 'skhun'])->name('students.skhun');
 });
 
 

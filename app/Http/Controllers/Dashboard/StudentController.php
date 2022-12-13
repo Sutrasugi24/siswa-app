@@ -66,8 +66,9 @@ class StudentController extends Controller
             'nisn' => ['required', 'min:5', 'numeric'],
             'kelas' => ['required', 'min:3',],
             'tahun' => ['required', 'min:4', 'numeric'],
-            'ijazah' => ['required', 'min:5'],
-            'skhun' => ['required', 'min:5'],
+            'ijazah' => 'mimes:jpg,png,jpeg|file|max:3072',
+            'skhun' => 'mimes:jpg,png,jpeg|file|max:3072',
+            'status' => 'required'
 
         ],[
             'nama.required' => 'Kolom nama harus diisi.',
@@ -75,10 +76,23 @@ class StudentController extends Controller
             'nisn.required' => 'Kolom Nomor Induk Siswa harus diisi.',
             'kelas.required' => 'Kolom Kelas harus diisi.',
             'tahun.required' => 'Kolom Tahun harus diisi.',
-            'ijazah.required' =>'Kolom Ijazah harus diisi.',
-            'skhun.required' => 'Kolom SKHUN harus diisi.',
         ]);
 
+        
+
+        if($request->file('ijazah')) {
+            $ijazah = $request->file('ijazah')->storeAs('ijazah-skhun', $request->nama.'-ijazah'. '.'.$request->file('ijazah')->extension());
+        } else {
+            $ijazah = '';
+        }
+
+
+        if($request->file('skhun')) {
+            $skhun = $request->file('skhun')->storeAs('ijazah-skhun', $request->nama.'-skhun'. '.'.$request->file('skhun')->extension());
+        } else {
+            $skhun = '';
+        }
+        
         $student = new Student();
 
         $student->nama = $request->nama;
@@ -86,8 +100,8 @@ class StudentController extends Controller
         $student->nisn = $request->nisn;
         $student->kelas = $request->kelas;
         $student->tahun = $request->tahun;
-        $student->ijazah = $request->ijazah;
-        $student->skhun = $request->skhun;
+        $student->ijazah = $ijazah;
+        $student->skhun = $skhun;
         $student->status = $request->status;
 
         $student->save();
@@ -103,9 +117,22 @@ class StudentController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show($id)
+    public function ijazah($id)
     {
-        //
+        $student = Student::find($id);
+
+        return view('students.ijazah',[
+            'student' => $student,
+        ]);
+    }
+
+    public function skhun($id)
+    {
+        $student = Student::find($id);
+
+        return view('students.skhun',[
+            'student' => $student,
+        ]);
     }
 
     /**
