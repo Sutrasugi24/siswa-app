@@ -91,26 +91,28 @@
                         <label class="block mb-2 dark:text-white" for="ijazah">Ijazah</label>
                         <input class="block w-full mb-1 text-sm border border-gray-300 rounded-lg cursor-pointer bg-gray-100 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
                         @error('ijazah') is-invalid @enderror"
-                        name="ijazah" id="ijazah" type="file">
+                        name="ijazah" id="ijazah" type="file" onchange="previewIjazah()">
                         <div class="invalid-feedback">
                         @error('ijazah')
                             {{ $message }}
                         @enderror
                         </div>
                         <p class=" text-xs text-gray-500 dark:text-gray-300" id="file_input_help">PNG atau JPG (MAX. 800x400px).</p>
+                        <img class="img-ijazah max-w-xs h-auto">
                         </div>
                     </div>
                     <!-- SKHUN -->
                     <div class="mb-3">
                         <div class="mb-3">
-                        <label class="block mb-2 dark:text-white" for="skhun">SKHUN</label>
-                        <input class="block w-full mb-1 text-sm border border-gray-300 rounded-lg cursor-pointer bg-gray-100 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
-                        @error('skhun') is-invalid @enderror" name="skhun" id="skhun" type="file">
+                            <label class="block mb-2 dark:text-white" for="skhun">SKHUN</label>
+                            <input class="block w-full mb-1 text-sm border border-gray-300 rounded-lg cursor-pointer bg-gray-100 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
+                            @error('skhun') is-invalid @enderror" name="skhun" id="skhun" type="file" onchange="previewSkhun()">
                         <div class="invalid-feedback">
                             @error('skhun')
                                 {{ $message }}
                             @enderror
                         <p class=" text-xs text-gray-500 dark:text-gray-300" id="file_input_help">PNG atau JPG (MAX. 2Mb).</p>
+                        <img class="img-skhun max-w-xs h-auto">
                         </div>
                     </div>
                     <!-- Status -->
@@ -140,4 +142,42 @@
         <!-- END: Input -->
     </div>   
 </div>
+
+
+<script>
+    function previewIjazah(){
+        const ijazah = document.querySelector('#ijazah');
+        
+        
+        const imgPreview= document.querySelector('.img-ijazah')
+    
+        imgPreview.style.display = 'block';
+    
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(ijazah.files[0]);
+    
+        oFReader.onload = function(oFREvent){
+            imgPreview.src = oFREvent.target.result;
+        }
+    
+    }
+
+
+    function previewSkhun(){
+        const skhun = document.querySelector('#skhun');
+        
+        
+        const imgPreview= document.querySelector('.img-skhun')
+    
+        imgPreview.style.display = 'block';
+    
+        const oFReader = new FileReader();
+        oFReader.readAsDataURL(skhun.files[0]);
+    
+        oFReader.onload = function(oFREvent){
+            imgPreview.src = oFREvent.target.result;
+        }
+    
+    }
+</script>
 @endsection
