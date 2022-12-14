@@ -1,6 +1,7 @@
 @extends('templates.default')
 
 @section('content')
+@hasrole('admin')
 <div class="intro-y flex items-center mt-12">
     <h2 class="text-lg font-medium mr-auto mb-2">Ubah Data Siswa</h2>
 </div>
@@ -132,4 +133,5 @@
         }
     }
 </script>
+@endhasrole
 @endsection

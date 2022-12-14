@@ -1,5 +1,6 @@
 @extends('templates.default')
 
+
 @section('content')
 <div class="flex mt-[4.7rem] md:mt-0 overflow-hidden">
     <!-- BEGIN: Content -->

@@ -27,16 +27,15 @@ Route::get('/register', function () {
 //Verified login
 Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard.index');
 
-
 //Export PDF
 Route::get('/exportpdf', [DashboardController::class, 'exportpdf'])->name('exportpdf');
 
-//Export PDF
+//Export Excel
 Route::get('/exportexcel', [DashboardController::class, 'exportexcel'])->name('exportexcel');
 
 
 //Students Route
-Route::controller(StudentController::class)->group(function(){
+Route::middleware('auth')->group(function (){
     Route::get('/students', [StudentController::class, 'index'])->name('students.index');
     Route::get('/students/create', [StudentController::class, 'create'])->name('students.create');
     Route::post('/students', [StudentController::class, 'store'])->name('students.store');
