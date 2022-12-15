@@ -68,7 +68,7 @@
                         <div class="dropdown-menu w-56">
                             <ul class="dropdown-content bg-primary text-white">
                                 <li class="p-2">
-                                    <div class="font-medium">{{ Auth::user()->name }}s</div>
+                                    <div class="font-medium">{{ Auth::user()->name }}</div>
                                 </li>
                                 <li>
                                     <hr class="dropdown-divider border-white/[0.08]">

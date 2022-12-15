@@ -62,29 +62,6 @@
                             <span class="invalid-feedback sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500">{{ $message }}</span>
                         @enderror
                     </div>
-                    <!--
-                    <div class="mt-3">
-                        <label for="ijazah" class="form-label">Ijazah</label>
-                        <input id="ijazah" name="ijazah" type="text" class="form-control
-                        @error('ijazah')
-                            is-invalid
-                        @enderror" value={{ old('ijazah')}}>
-                        @error('ijazah')
-                            <span class="invalid-feedback sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500">{{ $message }}</span>
-                        @enderror
-                    </div>
-                    <br />
-                    <div class='mb-3'>
-                        <label for="skhun" class="form-label">SKHUN</label>
-                        <input id="skhun" name="skhun" type="text" class="form-control
-                        @error('skhun')
-                            is-invalid
-                        @enderror" value={{ old('skhun')}}>
-                        @error('skhun')
-                            <span class="invalid-feedback sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500">{{ $message }}</span>
-                        @enderror
-                    </div>
-                    -->
                     <div class="side-nav__devider my-6"></div>
                     <!-- Ijazah -->
                     <div class="mb-3">

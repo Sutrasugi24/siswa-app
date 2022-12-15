@@ -83,7 +83,7 @@
                                     @csrf
                                     @method('DELETE')
                                     <button type="submit"  class="flex items-center text-danger">
-                                        <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Delete
+                                        <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Hapus
                                     </button>
                                 </form>
                             </div>
