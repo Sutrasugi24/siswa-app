@@ -13,6 +13,6 @@ class Student extends Model
 
 
     public $sortable = [
-        'nama', 'kelas', 'status',
+        'nama', 'nis', 'nisn', 'kelas', 'tahun', 'status', 
     ];
 }

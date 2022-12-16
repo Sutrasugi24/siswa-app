@@ -29,14 +29,6 @@
                 <a href="{{ route('users.create') }}" class="btn btn-primary shadow-md mr-2">Tambah Data <i class="w-5 h-5 " data-lucide="plus"></i></a>
                 @endif
                 <div class="hidden md:block mx-auto text-slate-500"></div>
-                <div class="w-full sm:w-auto mt-3 sm:mt-0 sm:ml-auto md:ml-0">
-                    <form class="w-56 relative text-slate-500" method="get">
-                        <div class="form-group">
-                            <input type="text" name="search" id="search" class="form-control w-56 box pr-10" placeholder="Cari Data..." value="">
-                            <i class="w-4 h-4 absolute my-auto inset-y-0 mr-3 right-0" data-lucide="search"></i>
-                        </div>
-                    </form>
-                </div>
             </div>
             <!-- BEGIN: Users Layout -->
             @foreach ($users as $user)
@@ -47,9 +39,11 @@
                             <img alt="SMAN 6 Cimahi" class="rounded-full" src="dist/images/profile-12.jpg">
                         </div>
                         <div class="lg:ml-2 lg:mr-auto text-center lg:text-left mt-3 lg:mt-0">
-                            <a href="" class="font-medium">{{ $user->name }}</a> 
-                            <div class="text-slate-500 text-xs mt-0.5">Software Engineer</div>
+                            <a href="#" class="text-base font-medium">{{ $user->name }}</a> 
+                            <div class="text-slate-500 text-xs mt-0.5">{{ $user->email}}</div>
                         </div>
+                        <div>
+                        <p class="text"></p>
                         @if(Auth::user()->hasRole('admin'))
                         <form class="flex mt-4 lg:mt-0" method="POST" action="{{ route('users.destroy', $user->id) }}">
                             @csrf
@@ -57,6 +51,7 @@
                             <button type="submit" class="btn btn-danger py-1 px-2 mr-2"><i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Hapus</button>
                         </form>
                         @endif
+                        </div>
                     </div>
                 </div>
             </div>

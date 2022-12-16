@@ -1,7 +1,6 @@
 @extends('templates.default')
 
 @section('content')
-@hasrole('admin')
 <div class="intro-y flex items-center mt-12">
     <h2 class="text-lg font-medium mr-auto mb-2">Ubah Data Siswa</h2>
 </div>
@@ -86,7 +85,7 @@
                         </div>
                     </div>
                     <br />
-                    <div class="form-group">
+                    <div class="form-group text-right">
                         <button type="button" onClick="window.history.back()"
                             class="btn btn-secondary w-24 mr-1 mb-2">Cancel</button>
                         <button type="submit" class="btn btn-primary w-24 mr-1 mb-2 ">Simpan</button>
@@ -133,5 +132,4 @@
         }
     }
 </script>
-@endhasrole
 @endsection

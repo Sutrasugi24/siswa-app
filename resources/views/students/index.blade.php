@@ -21,9 +21,7 @@
 {{--END Alert--}}
 <div class="grid grid-cols-12 gap-6 mt-5">
     <div class="intro-y col-span-12 flex flex-wrap sm:flex-nowrap items-center mt-2">
-        @if(Auth::user()->hasRole('admin'))
         <a href="{{ route('students.create') }}" class="btn btn-primary shadow-md mr-2">Tambah Data <i class="w-5 h-5 " data-lucide="plus"></i></a>
-        @endif
         <div class="hidden md:block mx-auto text-slate-500"></div>
         <div class="w-full sm:w-auto mt-3 sm:mt-0 sm:ml-auto md:ml-0">
             <form class="w-56 relative text-slate-500" method="get">
@@ -41,16 +39,14 @@
                 <tr>
                     <th class="whitespace-wrap text-sm text-center">No</th>
                     <th class="whitespace-wrap text-sm text-center">@sortablelink('nama', 'Nama')</th>
-                    <th class="whitespace-wrap text-sm text-center">NIS</th>
-                    <th class="whitespace-nowrap text-sm text-center">NISN</th>
+                    <th class="whitespace-wrap text-sm text-center">@sortablelink('nis', 'NIS')</th>
+                    <th class="whitespace-nowrap text-sm text-center">@sortablelink('nisn', 'NISN')</th>
                     <th class="whitespace-wrap text-sm text-center">@sortablelink('kelas', 'Kelas')</th>
-                    <th class="whitespace-wrap text-sm text-center">Tahun</th>
+                    <th class="whitespace-wrap text-sm text-center">@sortablelink('tahun', 'Tahun')</th>
                     <th class="whitespace-wrap text-sm text-center">Ijazah</th>
                     <th class="whitespace-wrap text-sm text-center">SKHUN</th>
                     <th class="text-center text-sm whitespace-wrap">@sortablelink('status', 'Status')</th>
-                    @if(Auth::user()->hasRole('admin'))
                     <th class="whitespace-wrap text-sm text-center">Aksi</th>
-                    @endif
                 </tr>
             </thead>
             <tbody>
@@ -73,7 +69,6 @@
                                 <i data-lucide="{{ $student['status'] == 'active' ? 'check-square' : 'x-square' }}" class="w-4 h-4 mr-2"></i> {{ $student['status'] == 'active' ? 'Telah Diambil' : 'Belum Diambil' }}
                             </div>
                         </td>
-                        @if(Auth::user()->hasRole('admin'))
                         <td class="table-report__action w-56">
                             <div class="flex justify-center items-center">
                                 <a class="flex items-center mr-3" href="{{ route('students.edit', $student->id) }}">
@@ -88,7 +83,6 @@
                                 </form>
                             </div>
                         </td>
-                        @endif
                     </tr>
                 @endforeach
             </tbody>
