@@ -162,8 +162,8 @@ class StudentController extends Controller
             'nisn' => ['required', 'min:5', 'numeric'],
             'kelas' => ['required', 'min:3',],
             'tahun' => ['required', 'min:4', 'numeric'],
-            'ijazah' => 'mimes:jpg,png,jpeg|file|max:3072',
-            'skhun' => 'mimes:jpg,png,jpeg|file|max:3072',
+            //'ijazah' => 'mimes:jpg,png,jpeg|file|max:3072',
+            //'skhun' => 'mimes:jpg,png,jpeg|file|max:3072',
             'status' => 'required'
 
         ],[
@@ -176,18 +176,32 @@ class StudentController extends Controller
 
         $student = Student::find($id);
 
-        if($request->file('ijazah')) {
-            $ijazah = $request->file('ijazah')->storeAs('ijazah-skhun', $request->file('ijazah')->getClientOriginalName());
-        } else{
+        if($request->hasfile('ijazah')) {
+            foreach($request->file('ijazah') as $file)
+            {
+                $name = $file->getClientOriginalName();
+                $file->move(public_path().'/storage/ijazah/', $name);  
+                $filepath[] = $name;
+                $ijazah = collect($filepath)->implode(',');
+            }
+
+        } else {
             $ijazah = $student->ijazah;
         }
 
-
-        if($request->file('skhun')) {
-            $skhun = $request->file('skhun')->storeAs('ijazah-skhun', $request->file('skhun')->getClientOriginalName());
+        if($request->hasfile('skhun')){
+            foreach($request->file('skhun') as $file)
+                {
+                    $name = $file->getClientOriginalName();
+                    $file->move(public_path().'/storage/skhun/', $name);  
+                    $filepath[] = $name;
+                    $skhun = collect($filepath)->implode(',');
+                }
         } else{
             $skhun = $student->skhun;
         }
+
+        
 
         $student->nama = $request->nama;
         $student->nis = $request->nis;
@@ -212,12 +226,22 @@ class StudentController extends Controller
         $pathSkhun = $student->skhun;
 
         if($pathIjazah != null || $pathIjazah != ''){
-            Storage::delete($pathIjazah);
+            $img = explode (",", $student->ijazah);
+            foreach($img as $key => $item){
+                Storage::delete('ijazah/'. $item);
+            }
         }
 
         if($pathSkhun != null || $pathSkhun != ''){
-            Storage::delete($pathSkhun);
+            $img = explode (",", $student->skhun);
+            foreach($img as $key => $item){
+                Storage::delete('skhun/'. $item);
+            }
         }
+
+        // if($pathSkhun != null || $pathSkhun != ''){
+        //     Storage::delete($pathSkhun);
+        // }
 
         $student->delete();
 

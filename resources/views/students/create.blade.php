@@ -69,7 +69,7 @@
                         <input class="block w-full mb-1 text-sm border border-gray-300 rounded-lg cursor-pointer bg-gray-100 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
                         @error('ijazah') is-invalid @enderror"
                         name="ijazah[]" id="ijazah" type="file" onchange="previewIjazah()" multiple="true">
-                        <div class="invalid-feedback">
+                            <div class="invalid-feedback">
                         @error('ijazah')
                             {{ $message }}
                         @enderror
@@ -84,7 +84,7 @@
                             <label class="block mb-2 dark:text-white" for="skhun">SKHUN</label>
                             <input class="block w-full mb-1 text-sm border border-gray-300 rounded-lg cursor-pointer bg-gray-100 dark:text-gray-400 focus:outline-none dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400
                             @error('skhun') is-invalid @enderror" name="skhun[]" id="skhun" type="file" onchange="previewSkhun()" multiple="true">
-                        <div class="invalid-feedback">
+                                <div class="invalid-feedback">
                             @error('skhun')
                                 {{ $message }}
                             @enderror
