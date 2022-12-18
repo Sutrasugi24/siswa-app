@@ -11,6 +11,10 @@ class Student extends Model
     use HasFactory;
     use Sortable;
 
+    protected $fillable =[
+        'ijazah',
+        'skhun'
+    ];
 
     public $sortable = [
         'nama', 'nis', 'nisn', 'kelas', 'tahun', 'status', 
