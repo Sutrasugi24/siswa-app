@@ -4,8 +4,8 @@
 <div class="intro-y flex items-center mt-12">
     <h2 class="text-lg font-medium mr-auto mb-2">Tambah Data Siswa</h2>
 </div>
-<div class="grid grid-cols-12 gap-6 mt-">
-    <div class="intro-y col-span-12 lg:col-span-6">
+<div class="grid grid-cols-12">
+    <div class="intro-y col-span-6 lg:col-span-6">
         <!-- BEGIN: Input -->
         <form class="box" action="{{ route('students.store') }}" method="POST" enctype="multipart/form-data">
         @csrf
@@ -75,7 +75,6 @@
                         @enderror
                         </div>
                         <p class=" text-xs text-gray-500 dark:text-gray-300" id="file_input_help">PNG atau JPG (MAX. 2Mb).</p>
-                        <img class="img-ijazah max-w-xs h-auto">
                         </div>
                     </div>
                     <!-- SKHUN -->
@@ -89,7 +88,6 @@
                                 {{ $message }}
                             @enderror
                         <p class=" text-xs text-gray-500 dark:text-gray-300" id="file_input_help">PNG atau JPG (MAX. 2Mb).</p>
-                        <img class="img-skhun max-w-xs h-auto">
                         </div>
                     </div>
                     <!-- Status -->
@@ -117,7 +115,16 @@
             </div>
         </form>
         <!-- END: Input -->
-    </div>   
+    </div>
+    <div class="intro-y col-span-5 lg:col-span-6 ml-5">
+        <div class="hero container max-w-screen-lg mx-auto pb-10">
+            <img class="img-ijazah mx-auto rounded-md mb-6" >
+        </div>
+        <div class="hero container max-w-screen-lg mx-auto pb-10">
+            <img class="img-ijazah mx-auto rounded-md mb-6">
+        </div>
+    </div>
+</div>
 </div>
 
 

@@ -6,9 +6,18 @@
     @php
         $img = explode (",", $student->ijazah)
     @endphp
+    <div class="intro-y box overflow-hidden mt-5">
+    <h3 class="text-4xl font-normal leading-normal mt-5 mb-2 text-primary text-center"> ijazah {{ $student->nama}}</h3>
+    <div class="p-8 flex items-center justify-center">
     @foreach ($img as $key => $item)
-        <img class="mb-6" src="{{ asset('storage/ijazah/'. $item) }}" alt="Tidak ada Gambar" data-action="zoom">
+        @if(strpos($item, '.pdf'))
+            <embed class="w-full h-screen mr-3 ml-3 mt-5" src="{{ asset('storage/ijazah/'. $item) }}" />
+        @else
+            <img class="w-full h-full mr-3 ml-3 mt-5" src="{{ asset('storage/ijazah/'. $item) }}" alt="Tidak ada Gambar" data-action="zoom">
+        @endif
     @endforeach
+    </div>
+    </div>
 @else
     <img src="#" alt="Tidak ada gambar">
 @endif

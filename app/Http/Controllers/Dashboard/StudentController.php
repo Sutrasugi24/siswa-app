@@ -147,8 +147,8 @@ class StudentController extends Controller
             'nisn' => ['required', 'min:5', 'numeric'],
             'kelas' => ['required', 'min:3',],
             'tahun' => ['required', 'min:4', 'numeric'],
-            //'ijazah' => 'mimes:jpg,png,jpeg|file|max:3072',
-            //'skhun' => 'mimes:jpg,png,jpeg|file|max:3072',
+            'ijazah' => 'max:2048',
+            'skhun' => 'max:2048',
             'status' => 'required'
 
         ],[

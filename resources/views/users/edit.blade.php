@@ -4,7 +4,7 @@
 <div class="intro-y flex items-center mt-12">
     <h2 class="text-lg font-medium mr-auto mb-2">Tambah Data User</h2>
 </div>
-<div class="grid grid-cols-12 gap-6 mt-">
+<div class="grid grid-cols-12 gap-6">
     <div class="intro-y col-span-12 lg:col-span-6">
         <!-- BEGIN: Input -->
         <form class="box p-5" method="POST" action="{{ route('users.update', $user->id) }}">
