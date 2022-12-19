@@ -66,28 +66,13 @@ class StudentController extends Controller
             'tahun.required' => 'Kolom Tahun harus diisi.',
         ]);
 
-        
-
-        // if($request->file('ijazah')) {
-        //     $ijazah = $request->file('ijazah')->storeAs('ijazah-skhun', $request->file('ijazah')->getClientOriginalName());
-        // } else {
-        //     $ijazah = '';
-        // }
-
-
-        // if($request->file('skhun')) {
-        //     $skhun = $request->file('skhun')->storeAs('ijazah-skhun', $request->file('skhun')->getClientOriginalName());
-        // } else {
-        //     $skhun = '';
-        // }
-
         if($request->hasfile('ijazah')) {
-            foreach($request->file('ijazah') as $file)
+            foreach($request->file('ijazah') as $ijazah)
             {
-                $name = $file->getClientOriginalName();
-                $file->move(public_path().'/storage/ijazah/', $name);  
-                $filepath[] = $name;
-                $ijazah = collect($filepath)->implode(',');
+                $nameIjazah = $ijazah->getClientOriginalName();
+                $ijazah->move(public_path().'/storage/ijazah/', $nameIjazah);  
+                $ijazahPath[] = $nameIjazah;
+                $ijazah = collect($ijazahPath)->implode(',');
             }
 
         } else {
@@ -95,12 +80,12 @@ class StudentController extends Controller
         }
 
         if($request->hasfile('skhun')){
-            foreach($request->file('skhun') as $file)
+            foreach($request->file('skhun') as $skhun)
             {
-                $name = $file->getClientOriginalName();
-                $file->move(public_path().'/storage/skhun/', $name);  
-                $filepath[] = $name;
-                $skhun = collect($filepath)->implode(',');
+                $nameSkhun = $skhun->getClientOriginalName();
+                $skhun->move(public_path().'/storage/skhun/', $nameSkhun);  
+                $skhunPath[] = $nameSkhun;
+                $skhun = collect($skhunPath)->implode(',');
             }
         } else{
             $skhun = '';
@@ -177,12 +162,12 @@ class StudentController extends Controller
         $student = Student::find($id);
 
         if($request->hasfile('ijazah')) {
-            foreach($request->file('ijazah') as $file)
+            foreach($request->file('ijazah') as $ijazah)
             {
-                $name = $file->getClientOriginalName();
-                $file->move(public_path().'/storage/ijazah/', $name);  
-                $filepath[] = $name;
-                $ijazah = collect($filepath)->implode(',');
+                $nameIjazah = $ijazah->getClientOriginalName();
+                $ijazah->move(public_path().'/storage/ijazah/', $nameIjazah);  
+                $ijazahPath[] = $nameIjazah;
+                $ijazah = collect($ijazahPath)->implode(',');
             }
 
         } else {
@@ -190,18 +175,16 @@ class StudentController extends Controller
         }
 
         if($request->hasfile('skhun')){
-            foreach($request->file('skhun') as $file)
-                {
-                    $name = $file->getClientOriginalName();
-                    $file->move(public_path().'/storage/skhun/', $name);  
-                    $filepath[] = $name;
-                    $skhun = collect($filepath)->implode(',');
-                }
+            foreach($request->file('skhun') as $skhun)
+            {
+                $nameSkhun = $skhun->getClientOriginalName();
+                $skhun->move(public_path().'/storage/skhun/', $nameSkhun);  
+                $skhunPath[] = $nameSkhun;
+                $skhun = collect($skhunPath)->implode(',');
+            }
         } else{
             $skhun = $student->skhun;
         }
-
-        
 
         $student->nama = $request->nama;
         $student->nis = $request->nis;

@@ -46,7 +46,7 @@
                         </div>
                         <p class=" text-xs text-gray-500 dark:text-gray-300" id="file_input_help">PNG atau JPG (MAX. 800x400px).</p>
                         @if($student->ijazah)
-                            <img src="{{ asset('storage/'.$student->ijazah) }}" class="img-ijazah max-w-xs h-auto">
+                            <img src="{{ asset('storage/ijazah/'.$student->ijazah) }}" class="img-ijazah max-w-xs h-auto">
                         @else
                             <img class="img-ijazah max-w-xs h-auto">
                         @endif
@@ -64,7 +64,7 @@
                             @enderror
                         <p class=" text-xs text-gray-500 dark:text-gray-300" id="file_input_help">PNG atau JPG (MAX. 2Mb).</p>
                         @if($student->skhun)
-                            <img src="{{ asset('storage/'.$student->skhun) }}" class="img-skhun max-w-xs h-auto">
+                            <img src="{{ asset('storage/skhun/'.$student->skhun) }}" class="img-skhun max-w-xs h-auto">
                         @else
                             <img class="img-skhun max-w-xs h-auto">
                         @endif
