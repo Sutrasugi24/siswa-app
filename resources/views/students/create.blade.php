@@ -74,7 +74,7 @@
                             {{ $message }}
                         @enderror
                         </div>
-                        <p class=" text-xs text-gray-500 dark:text-gray-300" id="file_input_help">PNG atau JPG (MAX. 2Mb).</p>
+                        <p class=" text-xs text-gray-500 dark:text-gray-300" id="file_input_help">PNG, JPG, JPEG, atau PDF (MAX. 2Mb).</p>
                         </div>
                     </div>
                     <!-- SKHUN -->
@@ -87,7 +87,7 @@
                             @error('skhun')
                                 {{ $message }}
                             @enderror
-                        <p class=" text-xs text-gray-500 dark:text-gray-300" id="file_input_help">PNG atau JPG (MAX. 2Mb).</p>
+                        <p class=" text-xs text-gray-500 dark:text-gray-300" id="file_input_help">PNG, JPG, JPEG, atau PDF (MAX. 2Mb).</p>
                         </div>
                     </div>
                     <!-- Status -->
@@ -133,7 +133,6 @@
 <script>
     function previewIjazah(){
         const ijazah = document.querySelector('#ijazah');
-        console.log(ijazah);
         
         const imgPreview= document.querySelector('.ijazah-preview')
         console.log(imgPreview);
@@ -145,7 +144,6 @@
 
             let oFReader = new FileReader();
             file = ijazah.files[i];
-            console.log(file);
             oFReader.readAsDataURL(file);
             
     
@@ -163,7 +161,6 @@
         const skhun = document.querySelector('#skhun');
         
         const imgPreview= document.querySelector('.skhun-preview')
-        console.log(imgPreview);
     
         imgPreview.style.display = 'block';
 
@@ -172,7 +169,6 @@
 
             let oFReader = new FileReader();
             file = skhun.files[i];
-            console.log(file);
             oFReader.readAsDataURL(file);
             
     

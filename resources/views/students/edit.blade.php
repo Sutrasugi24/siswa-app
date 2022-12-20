@@ -45,8 +45,8 @@
                                     {{ $message }}
                                 @enderror
                             </div>
-                            <p class=" text-xs text-gray-500 dark:text-gray-300" id="file_input_help">PNG atau JPG (MAX.
-                                800x400px).</p>
+                            <p class=" text-xs text-gray-500 dark:text-gray-300" id="file_input_help">PNG, JPG, JPEG, atau PDF (MAX.
+                                2Mb).</p>
                             {{-- @if($student->ijazah)
                             <img src="{{ asset('storage/ijazah/'.$student->ijazah) }}"
                             class="img-ijazah max-w-xs h-auto">
@@ -65,7 +65,7 @@
                             @error('skhun')
                                 {{ $message }}
                             @enderror
-                            <p class=" text-xs text-gray-500 dark:text-gray-300" id="file_input_help">PNG atau JPG (MAX.
+                            <p class=" text-xs text-gray-500 dark:text-gray-300" id="file_input_help">PNG, JPG, JPEG, atau PDF (MAX.
                                 2Mb).</p>
                         </div>
                     </div>
@@ -98,26 +98,28 @@
 </div>
 <div class="intro-y col-span-5 lg:col-span-6 ml-5">
     <div class="hero container max-w-screen-lg mx-auto pb-10">
+        <p class="text-primary text-center text-lg mb-2">Ijazah</p>
         @if($student->ijazah)
             @php
                 $img = explode (",", $student->ijazah)
             @endphp
             @foreach($img as $key => $item)
-                <img class="mb-6" src="{{ asset('storage/ijazah/'.$item) }}"
-                    class="img-ijazah mx-auto rounded-md">
+                <img src="{{ asset('storage/ijazah/'.$item) }}"
+                    class="img-ijazah mx-auto rounded-md mb-4">
             @endforeach
         @else
             <img class="img-ijazah" alt="Tidak ada gambar">
         @endif
     </div>
-    <div class="hero container max-w-screen-lg mx-auto pb-10">
+    <div class="hero container max-w-screen-lg mx-auto pb-10 mb-2">
+        <h3 class="text-primary text-center text-lg">SKHUN</h3>
         @if($student->skhun)
             @php
                 $img = explode (",", $student->skhun)
             @endphp
             @foreach($img as $key => $item)
-                <img class="mb-6" src="{{ asset('storage/skhun/'.$item) }}"
-                    class="img-skhun mx-auto rounded-md">
+                <img src="{{ asset('storage/skhun/'.$item) }}"
+                    class="img-skhun mx-auto rounded-md mb-4">
             @endforeach
         @else
             <img class="img-skhun" alt="Tidak ada gambar">
