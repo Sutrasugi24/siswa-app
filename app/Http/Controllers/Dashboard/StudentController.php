@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Dashboard;
 
 use App\Models\Student;
+use Illuminate\Support\Str;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 use Illuminate\Support\Facades\Storage;
@@ -69,7 +70,7 @@ class StudentController extends Controller
         if($request->hasfile('ijazah')) {
             foreach($request->file('ijazah') as $ijazah)
             {
-                $nameIjazah = $ijazah->getClientOriginalName();
+                $nameIjazah = Str::random(20). "." . $ijazah->getClientOriginalExtension();
                 $ijazah->move(public_path().'/storage/ijazah/', $nameIjazah);  
                 $ijazahPath[] = $nameIjazah;
                 $ijazah = collect($ijazahPath)->implode(',');
@@ -82,7 +83,7 @@ class StudentController extends Controller
         if($request->hasfile('skhun')){
             foreach($request->file('skhun') as $skhun)
             {
-                $nameSkhun = $skhun->getClientOriginalName();
+                $nameSkhun = Str::random(20). "." . $skhun->getClientOriginalExtension();
                 $skhun->move(public_path().'/storage/skhun/', $nameSkhun);  
                 $skhunPath[] = $nameSkhun;
                 $skhun = collect($skhunPath)->implode(',');
@@ -164,7 +165,7 @@ class StudentController extends Controller
         if($request->hasfile('ijazah')) {
             foreach($request->file('ijazah') as $ijazah)
             {
-                $nameIjazah = $ijazah->getClientOriginalName();
+                $nameIjazah = Str::random(20). "." . $ijazah->getClientOriginalExtension();
                 $ijazah->move(public_path().'/storage/ijazah/', $nameIjazah);  
                 $ijazahPath[] = $nameIjazah;
                 $ijazah = collect($ijazahPath)->implode(',');
@@ -177,7 +178,7 @@ class StudentController extends Controller
         if($request->hasfile('skhun')){
             foreach($request->file('skhun') as $skhun)
             {
-                $nameSkhun = $skhun->getClientOriginalName();
+                $nameSkhun = Str::random(20). "." . $skhun->getClientOriginalExtension();
                 $skhun->move(public_path().'/storage/skhun/', $nameSkhun);  
                 $skhunPath[] = $nameSkhun;
                 $skhun = collect($skhunPath)->implode(',');

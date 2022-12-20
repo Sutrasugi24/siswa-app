@@ -117,11 +117,13 @@
         <!-- END: Input -->
     </div>
     <div class="intro-y col-span-5 lg:col-span-6 ml-5">
-        <div class="hero container max-w-screen-lg mx-auto pb-10">
-            <img class="img-ijazah mx-auto rounded-md mb-6" >
+        <div class="ijazah-preview hero container max-w-screen-lg mx-auto pb-10">
+            <h5 class="text-primary">Ijazah</h5>
+            {{-- <img class="img-ijazah mx-auto rounded-md mb-4" > --}}
         </div>
-        <div class="hero container max-w-screen-lg mx-auto pb-10">
-            <img class="img-ijazah mx-auto rounded-md mb-6">
+        <div class="skhun-preview hero container max-w-screen-lg mx-auto pb-10">
+            <h5 class="text-primary">SKHUN</h5>
+            {{-- <img class="images-skhun mx-auto rounded-md mb-4"> --}}
         </div>
     </div>
 </div>
@@ -131,37 +133,56 @@
 <script>
     function previewIjazah(){
         const ijazah = document.querySelector('#ijazah');
+        console.log(ijazah);
         
-        
-        const imgPreview= document.querySelector('.img-ijazah')
+        const imgPreview= document.querySelector('.ijazah-preview')
+        console.log(imgPreview);
     
         imgPreview.style.display = 'block';
+
+        for (let i=0; i<ijazah.files.length; i++){
+            const imgIjazah= document.createElement("img");
+
+            let oFReader = new FileReader();
+            file = ijazah.files[i];
+            console.log(file);
+            oFReader.readAsDataURL(file);
+            
     
-        const oFReader = new FileReader();
-        oFReader.readAsDataURL(ijazah.files[0]);
-    
-        oFReader.onload = function(oFREvent){
-            imgPreview.src = oFREvent.target.result;
+            oFReader.onload = function(oFREvent){
+                imgIjazah.src = oFREvent.target.result;
+            }
+
+            imgIjazah.className = 'mx-auto rounded-md mb-4';
+            imgPreview.append(imgIjazah);
         }
-    
     }
 
 
     function previewSkhun(){
         const skhun = document.querySelector('#skhun');
         
-        
-        const imgPreview= document.querySelector('.img-skhun')
+        const imgPreview= document.querySelector('.skhun-preview')
+        console.log(imgPreview);
     
         imgPreview.style.display = 'block';
+
+        for (let i=0; i<skhun.files.length; i++){
+            const imgSkhun= document.createElement("img");
+
+            let oFReader = new FileReader();
+            file = skhun.files[i];
+            console.log(file);
+            oFReader.readAsDataURL(file);
+            
     
-        const oFReader = new FileReader();
-        oFReader.readAsDataURL(skhun.files[0]);
-    
-        oFReader.onload = function(oFREvent){
-            imgPreview.src = oFREvent.target.result;
+            oFReader.onload = function(oFREvent){
+                imgSkhun.src = oFREvent.target.result;
+            }
+
+            imgSkhun.className = 'mx-auto rounded-md mb-4';
+            imgPreview.append(imgSkhun);
         }
-    
     }
 </script>
 @endsection
