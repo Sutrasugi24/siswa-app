@@ -22,7 +22,7 @@ return new class extends Migration
             $table->string('tahun', 4);
             $table->string('ijazah', 255)->nullable();            
             $table->string('skhun', 255)->nullable();            
-            $table->enum('status', ['active','inactive']);
+            $table->enum('status', ['sudah_diambil','belum_diambil']);
             $table->softDeletes('deleted_at');
             $table->timestamps();
         });

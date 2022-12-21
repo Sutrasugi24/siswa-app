@@ -65,8 +65,8 @@
                             <a href="{{ route('students.skhun', $student->id) }}" class="flex whitespace-nowrap justify-center items-center text-success"><i data-lucide="eye" class="w-4 h-4 mr-1"></i></a>
                         </td>
                         <td class="w-40">
-                            <div class="flex whitespace-nowrap items-center {{ $student['status'] == 'active' ? 'text-success' : 'text-danger' }}">
-                                <i data-lucide="{{ $student['status'] == 'active' ? 'check-square' : 'x-square' }}" class="w-4 h-4 mr-2"></i> {{ $student['status'] == 'active' ? 'Telah Diambil' : 'Belum Diambil' }}
+                            <div class="flex whitespace-nowrap items-center {{ $student['status'] == 'sudah_diambil' ? 'text-success' : 'text-danger' }}">
+                                <i data-lucide="{{ $student['status'] == 'sudah_diambil' ? 'check-square' : 'x-square' }}" class="w-4 h-4 mr-2"></i> {{ $student['status'] == 'sudah_diambil' ? 'Sudah Diambil' : 'Belum Diambil' }}
                             </div>
                         </td>
                         <td class="table-report__action w-56">

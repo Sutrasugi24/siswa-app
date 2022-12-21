@@ -74,13 +74,13 @@
                             <label for="status">Status</label>
                         </div>
                         <div class="form-check inline-block">
-                            <input type="radio" name="status" class="form-check-input" value="active" id="active"
-                                @if((old('status') ?? $student->status ?? '') == 'active') checked @endif>
+                            <input type="radio" name="status" class="form-check-input" value="sudah_diambil" id="sudah_diambil"
+                                @if((old('status') ?? $student->status ?? '') == 'sudah_diambil') checked @endif>
                             <label for="active" class="form-check-label">Sudah Diambil</label>
                         </div>
                         <div class="form-check inline-block">
-                            <input type="radio" name="status" class="form-check-input" value="inactive" id="inactive"
-                                @if((old('status') ?? $student->status ?? '') == 'inactive') checked @endif>
+                            <input type="radio" name="status" class="form-check-input" value="belum_diambil" id="belum_diambil"
+                                @if((old('status') ?? $student->status ?? '') == 'belum_diambil') checked @endif>
                             <label for="inactive" class="form-check-label">Belum Diambil</label>
                         </div>
                     </div>
