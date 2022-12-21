@@ -5,7 +5,7 @@
         </h2>
 
         <p class="mt-1 text-sm text-gray-600">
-            {{ __('Gunakan huruf, angka, dan simbol akan password kuat..') }}
+            {{ __('Gunakan huruf, angka, dan simbol agar password kuat.') }}
         </p>
     </header>
 
