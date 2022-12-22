@@ -45,11 +45,12 @@
                         <div>
                         <p class="text"></p>
                         @if(Auth::user()->hasRole('admin'))
-                        <form class="flex mt-4 lg:mt-0" method="POST" action="{{ route('users.destroy', $user->id) }}">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger py-1 px-2 mr-2"><i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Hapus</button>
-                        </form>
+                            <!-- BEGIN: Modal Toggle -->
+                            {{-- <div class="text-center">
+                                <a href="javascript:;"  class="btn btn-primary">Show Modal</a>
+                            </div> --}}
+                            <!-- END: Modal Toggle -->
+                            <button onclick="handleDelete({{ $user->id }})" type="submit" data-tw-toggle="modal" data-tw-target="#delete-modal-preview" class="btn btn-danger py-1 px-2 mr-2"><i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Hapus</button>
                         @endif
                         </div>
                     </div>
@@ -68,4 +69,33 @@
     </div>
     <!-- END: Content -->
 </div>
+
+
+<!-- BEGIN: Modal Content -->
+<div id="delete-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body p-2">
+                <div class="p-5 text-center">
+                    <i data-lucide="x-circle" class="w-16 h-16 text-danger mx-auto mt-3"></i>
+                    <h3 class="text-slate-700 text-lg font-normal mt-2">Apakah ingin menghapus {{ $user->name }}?</h3>
+                </div>
+                <div class="p-6 mb-4 text-center mx-auto">
+                    <form method="POST" class="inline-flex mx-auto" action="{{ route('users.destroy', $user->id) }}">
+                        @csrf
+                        @method('DELETE')
+                        <a id="deleteLink" type="submit" class="btn btn-danger w-24">Hapus</a>
+                    </form>
+                    <button type="button" data-tw-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1 mx-auto">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
 @endsection
+
+@section('script')
+
+@endsection
+

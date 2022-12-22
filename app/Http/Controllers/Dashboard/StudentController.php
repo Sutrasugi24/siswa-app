@@ -33,7 +33,6 @@ class StudentController extends Controller
             $studentsData = Student::sortable()->paginate(10)->onEachSide(1)->fragment('siswa');
         }
 
-        //$student = Student::sortable()->paginate(5)->onEachSide(1)->fragment('siswa');
         return view('students.index')->with([
             'students' => $studentsData,
             'search' => $search,
@@ -54,17 +53,28 @@ class StudentController extends Controller
             'nis' => ['required', 'min:5', 'numeric'],
             'nisn' => ['required', 'min:5', 'numeric'],
             'kelas' => ['required', 'min:3',],
-            'tahun' => ['required', 'min:4', 'numeric'],
+            'tahun' => ['required', 'numeric'],
             //'ijazah' => 'file|image|mimes:jpg,png,jpeg,pdf|max:2048',
             //'skhun' => 'mimes:jpg,png,jpeg,pdf|max:2048',
             'status' => 'required'
 
         ],[
             'nama.required' => 'Kolom nama harus diisi.',
+            'nama.min' => 'Kolom nama tidak boleh kurang dari 3 karakter.',
+            'nama.max' => 'Kolom nama tidak boleh lebih dari 30 karakter.',
             'nis.required' => 'Kolom Nomor Induk Siswa harus diisi.',
+            'nis.min' => 'Kolom Nomor Induk Siswa tidak boleh kurang dari 5 angka.',
+            'nis.numeric' => 'Kolom NISN harus angka',
             'nisn.required' => 'Kolom Nomor Induk Siswa harus diisi.',
+            'nisn.min' => 'Kolom Nomor Induk Siswa tidak boleh kurang dari 5 angka.',
+            'nisn.numeric' => 'Kolom NISN harus angka',
+            'ijazah.max' => 'File ijazah tidak boleh lebih dari 2 Mb.',
+            'skhun.max' => 'File SKHUN tidak boleh lebih dari 2 Mb.',
             'kelas.required' => 'Kolom Kelas harus diisi.',
+            'kelas.min' => 'Kolom kelas tidak boleh kurang dari 3 karakter.',
             'tahun.required' => 'Kolom Tahun harus diisi.',
+            'tahun.numeric' => 'Kolom Tahun harus angka.',
+            'tahun.max' => 'Kolom tahun tidak boleh lebih dari 4 angka.',
         ]);
 
         if($request->hasfile('ijazah')) {
@@ -147,17 +157,29 @@ class StudentController extends Controller
             'nis' => ['required', 'min:5', 'numeric'],
             'nisn' => ['required', 'min:5', 'numeric'],
             'kelas' => ['required', 'min:3',],
-            'tahun' => ['required', 'min:4', 'numeric'],
+            'tahun' => ['required', 'min:4', 'max:4', 'numeric'],
             'ijazah' => 'max:2048',
             'skhun' => 'max:2048',
             'status' => 'required'
 
         ],[
             'nama.required' => 'Kolom nama harus diisi.',
+            'nama.min' => 'Kolom nama tidak boleh kurang dari 3 karakter.',
+            'nama.max' => 'Kolom nama tidak boleh lebih dari 30 karakter.',
             'nis.required' => 'Kolom Nomor Induk Siswa harus diisi.',
+            'nis.min' => 'Kolom Nomor Induk Siswa tidak boleh kurang dari 5 angka.',
+            'nis.numeric' => 'Kolom NISN harus angka',
             'nisn.required' => 'Kolom Nomor Induk Siswa harus diisi.',
+            'nisn.min' => 'Kolom Nomor Induk Siswa tidak boleh kurang dari 5 angka.',
+            'nisn.numeric' => 'Kolom NISN harus angka',
+            'ijazah.max' => 'File ijazah tidak boleh lebih dari 2 Mb.',
+            'skhun.max' => 'File SKHUN tidak boleh lebih dari 2 Mb.',
             'kelas.required' => 'Kolom Kelas harus diisi.',
+            'kelas.min' => 'Kolom kelas tidak boleh kurang dari 3 karakter.',
             'tahun.required' => 'Kolom Tahun harus diisi.',
+            'tahun.numeric' => 'Kolom Tahun harus angka.',
+            'tahun.min' => 'Kolom Tahun tidak boleh kurang dari 4 angka.',
+            'tahun.max' => 'Kolom tahun tidak boleh lebih dari 4 angka.',
         ]);
 
         $student = Student::find($id);

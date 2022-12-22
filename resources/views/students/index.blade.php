@@ -74,16 +74,33 @@
                                 <a class="flex items-center mr-3" href="{{ route('students.edit', $student->id) }}">
                                     <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit
                                 </a>
-                                <form action="{{ route('students.destroy', $student->id) }}" method="post">
-                                    @csrf
-                                    @method('DELETE')
-                                    <button type="submit"  class="flex items-center text-danger">
-                                        <i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Hapus
-                                    </button>
-                                </form>
+                                <button type="button" data-tw-toggle="modal" data-tw-target="#delete-modal-preview-{{$student->id}}" class="btn btn-danger py-1 px-2 mr-2"><i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Hapus</button>
                             </div>
                         </td>
                     </tr>
+
+                    <!-- BEGIN: Modal Content -->
+<div id="delete-modal-preview-{{$student->id}}" class="modal" tabindex="-1" aria-hidden="true">
+    <div class="modal-dialog">
+        <div class="modal-content">
+            <div class="modal-body p-2">
+                <div class="p-5 text-center">
+                    <i data-lucide="x-circle" class="w-16 h-16 text-danger mx-auto mt-3"></i>
+                    <h3 class="text-slate-700 text-lg font-normal mt-2">Apakah ingin menghapus {{ $student->nama }}?</h3>
+                </div>
+                <div class="p-6 mb-4 text-center mx-auto">
+                    <form method="POST" class="inline-flex mx-auto" action="{{ route('students.destroy', $student->id) }}">
+                        @csrf
+                        @method('DELETE')
+                        <button type="submit" class="btn btn-danger w-24">Hapus</button>
+                    </form>
+                    <button type="button" data-tw-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1 mx-auto">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- END: Modal Content -->
                 @endforeach
             </tbody>
         </table>
@@ -100,4 +117,6 @@
     </div>
     <!-- END: Pagination -->
 </div>
+
+
 @endsection
