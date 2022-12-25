@@ -41,9 +41,8 @@
         <div class="flex mt-[4.7rem] md:mt-0 overflow-hidden">
             <!-- BEGIN: Side Menu -->
             <nav class="side-nav">
-                <a href="" class="intro-x flex items-center pl-5 pt-4 mt-3">
-                    <img alt="" class="w-6" src="/dist/images/logo.svg">
-                    <span class="hidden xl:block text-white text-lg ml-3"> SMAN 6 Cimahi </span> 
+                <a href="/" class="intro-x flex items-center pl-5 pt-4 mt-3">
+                    <img alt="SMAN 6 Cimahi" class="w-3/4 items-center" src="{{asset('/dist/images/sman6.png')}}">
                 </a>
                 <x-menu/>
             </nav>
@@ -61,7 +60,7 @@
                     <!-- BEGIN: Account Menu -->
                     <div class="intro-x dropdown w-8 h-8">
                         <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in" role="button" aria-expanded="false" data-tw-toggle="dropdown">
-                            <img alt="SMAN 6 Cimahi" src="dist/images/profile-5.jpg">
+                            <i data-lucide="user" class="mx-auto my-auto w-auto h-auto"></i>
                         </div>
                         <div class="dropdown-menu w-56">
                             <ul class="dropdown-content bg-primary text-white">

@@ -11,11 +11,30 @@
                         Laporan Keseluruhan
                     </h2>
                     <div class="flex items-center sm:ml-auto mt-3 sm:mt-0">
+                        <button class="btn btn-primary shadow-md mr-2">Unduh</button>
+                        <div class="dropdown ml-auto sm:ml-0">
+                            <button class="dropdown-toggle btn px-2 box" aria-expanded="false" data-tw-toggle="dropdown">
+                                <span class="w-5 h-5 flex items-center justify-center"> <i class="w-4 h-4" data-lucide="download"></i> </span>
+                            </button>
+                            <div class="dropdown-menu w-40">
+                                <ul class="dropdown-content">
+                                    <li>
+                                        <a href="/exportexcel" class="dropdown-item"> <i data-lucide="sheet" class="w-4 h-4 mr-2"></i> Export Excel </a>
+                                    </li>
+                                    <li>
+                                        <a href="/exportpdf" class="dropdown-item"> <i data-lucide="file-text" class="w-4 h-4 mr-2"></i> Export PDF </a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    {{-- <div class="">
                         <a href="/exportexcel" class="btn box flex items-center text-slate-600 dark:text-slate-300"> <i
                                 data-lucide="download" class="hidden text-primary sm:block w-4 h-4 mr-2"></i> Excel</a>
-                        <a href="/exportpdf" class="ml-3 btn box flex text primary items-center text-slate-600 dark:text-slate-300">
+                        <a href="" class="ml-3 btn box flex text primary items-center text-slate-600 dark:text-slate-300">
                             <i data-lucide="download" class="hidden text-primary sm:block w-4 h-4 mr-1"></i> PDF</a>
-                    </div>
+                    </div> --}}
                 </div>
                 <div class="grid grid-cols-12 gap-6 mt-5">
                     <div class="col-span-12 sm:col-span-6 xl:col-span-3 intro-y">

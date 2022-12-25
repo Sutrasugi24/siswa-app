@@ -26,8 +26,8 @@ class DashboardController extends Controller
     public function index()
     {
         $studentCount = Student::count();
-        $studentActive = Student::where('status', 'sudah_diambil')->get()->count();
-        $studentInactive = Student::where('status', 'belum_diambil')->get()->count();
+        $studentActive = Student::where('status', 'sudah diambil')->get()->count();
+        $studentInactive = Student::where('status', 'belum diambil')->get()->count();
         $userCount = User::count();
         return view('dashboard.index', [
             'student_count' => $studentCount,

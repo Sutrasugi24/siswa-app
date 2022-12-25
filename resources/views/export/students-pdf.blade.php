@@ -36,7 +36,7 @@
 
 <body>
 
-    <h1>A Fancy Table</h1>
+    <h1>Data Siswa</h1>
 
     <table id="customers">
         <tr>
