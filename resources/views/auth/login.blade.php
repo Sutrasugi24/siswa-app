@@ -6,9 +6,6 @@
         <meta charset="utf-8">
         <link href="dist/images/logo.svg" rel="shortcut icon">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-        <meta name="description" content="Tinker admin is super flexible, powerful, clean & modern responsive tailwind admin template with unlimited possibilities.">
-        <meta name="keywords" content="admin template, Tinker Admin Template, dashboard template, flat admin template, responsive admin template, web app">
-        <meta name="author" content="LEFT4CODE">
         <title>SMAN 6 Cimahi</title>
         <!-- BEGIN: CSS Assets-->
         <link rel="stylesheet" href="{{ asset('/dist/css/app.css') }}" />
@@ -23,18 +20,8 @@
             <div class="block xl:grid grid-cols-2 gap-4">
                 <!-- BEGIN: Login Info -->
                 <div class="hidden xl:flex flex-col min-h-screen">
-                    <a href="" class="-intro-x flex items-center pt-5">
-                        <img alt="Midone - HTML Admin Template" class="w-6" src="dist/images/logo.svg">
-                        <span class="text-white text-lg ml-3"> SMAN 6 Cimahi </span> 
-                    </a>
-                    <div class="my-auto">
-                        <img alt="Midone - HTML Admin Template" class="-intro-x w-1/2 -mt-16" src="dist/images/illustration.svg">
-                        <div class="-intro-x text-white font-medium text-4xl leading-tight mt-10">
-                            Siswa-app
-                            <div class="-intro-x mt-1 text-lg text-white text-opacity-70 dark:text-slate-400">Masuk untuk melihat informasi Ijazah dan SKHUN.</div>
-                        </div>
-                        
-                    </div>
+                    
+                    
                 </div>
                 <!-- END: Login Info -->
                 <!-- Session Status -->
@@ -62,7 +49,6 @@
                         </div>
                         <div class="intro-x mt-5 xl:mt-8 text-center xl:text-left">
                             <button class="btn btn-primary py-3 px-4 w-full xl:w-32 xl:mr-3 align-top">{{ __('Masuk') }}</button>
-                            <a href="{{ route('register') }}" class="btn btn-outline-secondary py-3 px-4 w-full xl:w-32 mt-3 xl:mt-0 align-top">Registrasi</a>
                         </div>
                     </div>
                 </form>

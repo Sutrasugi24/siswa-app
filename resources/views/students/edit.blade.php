@@ -15,23 +15,53 @@
                 <div class="preview">
                     <div class="mt-3">
                         <label for="nama" class="form-label">Nama</label>
-                        <input id="nama" name="nama" type="text" class="form-control" value="{{ $student->nama }}">
+                        <input id="nama" name="nama" type="text" class="form-control
+                        @error('nama')
+                            is-invalid
+                        @enderror" value="{{ $student->nama }}">
+                        @error('nama')
+                            <span class="invalid-feedback sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="mt-3">
                         <label for="nis" class="form-label">Nomor Induk Siswa</label>
-                        <input id="nis" name="nis" type="text" class="form-control" value="{{ $student->nis }}">
+                        <input id="nis" name="nis" type="text" class="form-control
+                        @error('nis')
+                            is-invalid
+                        @enderror" value="{{ $student->nis }}">
+                        @error('nis')
+                            <span class="invalid-feedback sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="mt-3">
                         <label for="nisn" class="form-label">Nomor Induk Siswa Nasional</label>
-                        <input id="nisn" name="nisn" type="text" class="form-control" value="{{ $student->nisn }}">
+                        <input id="nisn" name="nisn" type="text" class="form-control
+                        @error('nisn')
+                            is-invalid
+                        @enderror" value="{{ $student->nisn }}">
+                        @error('nisn')
+                            <span class="invalid-feedback sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="mt-3">
                         <label for="kelas" class="form-label">Kelas</label>
-                        <input id="kelas" name="kelas" type="text" class="form-control" value="{{ $student->kelas }}">
+                        <input id="kelas" name="kelas" type="text" class="form-control
+                        @error('kelas')
+                            is-invalid
+                        @enderror" value="{{ $student->kelas }}">
+                        @error('kelas')
+                            <span class="invalid-feedback sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500">{{ $message }}</span>
+                        @enderror
                     </div>
                     <div class="mt-3">
                         <label for="tahun" class="form-label">Tahun</label>
-                        <input id="tahun" name="tahun" type="text" class="form-control" value="{{ $student->tahun }}">
+                        <input id="tahun" name="tahun" type="text" class="form-control
+                        @error('tahun')
+                            is-invalid
+                        @enderror" value="{{ $student->tahun }}">
+                        @error('tahun')
+                            <span class="invalid-feedback sm:ml-auto mt-1 sm:mt-0 text-xs text-slate-500">{{ $message }}</span>
+                        @enderror
                     </div>
                     <!-- Ijazah -->
                     <div class="mb-3">
@@ -74,14 +104,14 @@
                             <label for="status">Status</label>
                         </div>
                         <div class="form-check inline-block">
-                            <input type="radio" name="status" class="form-check-input" value="sudah_diambil" id="sudah_diambil"
-                                @if((old('status') ?? $student->status ?? '') == 'sudah_diambil') checked @endif>
-                            <label for="sudah_diambil" class="form-check-label">Sudah Diambil</label>
+                            <input type="radio" name="status" class="form-check-input" value="sudah diambil" id="sudah diambil"
+                                @if((old('status') ?? $student->status ?? '') == 'sudah diambil') checked @endif>
+                            <label for="sudah diambil" class="form-check-label">Sudah Diambil</label>
                         </div>
                         <div class="form-check inline-block">
-                            <input type="radio" name="status" class="form-check-input" value="belum_diambil" id="belum_diambil"
-                                @if((old('status') ?? $student->status ?? '') == 'belum_diambil') checked @endif>
-                            <label for="belum_diambil" class="form-check-label">Belum Diambil</label>
+                            <input type="radio" name="status" class="form-check-input" value="belum diambil" id="belum diambil"
+                                @if((old('status') ?? $student->status ?? '') == 'belum diambil') checked @endif>
+                            <label for="belum diambil" class="form-check-label">Belum Diambil</label>
                         </div>
                     </div>
                     <br />

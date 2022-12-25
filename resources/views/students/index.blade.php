@@ -37,7 +37,7 @@
         <table class="table table-report -mt-2">
             <thead>
                 <tr>
-                    <th class="whitespace-wrap text-sm text-center">No</th>
+                    {{-- <th class="whitespace-wrap text-sm text-center">No</th> --}}
                     <th class="whitespace-wrap text-sm text-center">@sortablelink('nama', 'Nama')</th>
                     <th class="whitespace-wrap text-sm text-center">@sortablelink('nis', 'NIS')</th>
                     <th class="whitespace-nowrap text-sm text-center">@sortablelink('nisn', 'NISN')</th>
@@ -52,29 +52,29 @@
             <tbody>
                 @foreach ($students as $student)
                     <tr class="intro-x">
-                        <td class="font-medium text-sm text-center">{{ ($students->currentPage()- 1) * $students->perPage() + $loop->iteration }}</td>
-                        <td class="font-medium whitespace-wrap text-sm text-center">{{ $student->nama }}</td>
-                        <td class="font-medium whitespace-wrap text-sm text-center">{{ $student->nis }}</td>
-                        <td class="font-medium whitespace-wrap text-sm text-center">{{ $student->nisn }}</td>
-                        <td class="font-medium whitespace-wrap text-sm text-center">{{ $student->kelas }}</td>
-                        <td class="font-medium whitespace-wrap text-sm text-center">{{ $student->tahun }}</td>
-                        <td class="w-40 text-center">
+                        {{-- <td class="font-medium text-sm text-center">{{ ($students->currentPage()- 1) * $students->perPage() + $loop->iteration }}</td> --}}
+                        <td class="font-medium whitespace-nowrap text-sm text-center">{{ $student->nama }}</td>
+                        <td class="font-medium whitespace-nowrap text-sm text-center">{{ $student->nis }}</td>
+                        <td class="font-medium whitespace-nowrap text-sm text-center">{{ $student->nisn }}</td>
+                        <td class="font-medium whitespace-nowrap text-sm text-center">{{ $student->kelas }}</td>
+                        <td class="font-medium whitespace-nowrap text-sm text-center">{{ $student->tahun }}</td>
+                        <td class="w-auto text-center">
                             <a href="{{ route('students.ijazah', $student->id) }}" class="flex whitespace-nowrap justify-center items-center text-success"><i data-lucide="eye" class="w-4 h-4 mr-1"></i></a>
                         </td>
-                        <td class="w-40 text-center">
+                        <td class="w-auto text-center">
                             <a href="{{ route('students.skhun', $student->id) }}" class="flex whitespace-nowrap justify-center items-center text-success"><i data-lucide="eye" class="w-4 h-4 mr-1"></i></a>
                         </td>
-                        <td class="w-40">
-                            <div class="flex whitespace-nowrap items-center {{ $student['status'] == 'sudah_diambil' ? 'text-success' : 'text-danger' }}">
-                                <i data-lucide="{{ $student['status'] == 'sudah_diambil' ? 'check-square' : 'x-square' }}" class="w-4 h-4 mr-2"></i> {{ $student['status'] == 'sudah_diambil' ? 'Sudah Diambil' : 'Belum Diambil' }}
+                        <td class="w-auto text-center">
+                            <div class="flex whitespace-wrap justify-center {{ $student['status'] == 'sudah diambil' ? 'text-success' : 'text-danger' }}">
+                                <i data-lucide="{{ $student['status'] == 'sudah diambil' ? 'check-square' : 'x-square' }}" class="items-center w-4 h-4"></i>
                             </div>
                         </td>
-                        <td class="table-report__action w-56">
+                        <td class="table-report__action w-auto">
                             <div class="flex justify-center items-center">
                                 <a class="flex items-center mr-3" href="{{ route('students.edit', $student->id) }}">
-                                    <i data-lucide="check-square" class="w-4 h-4 mr-1"></i> Edit
+                                    <i data-lucide="edit" class="w-4 h-4 mr-1"></i>
                                 </a>
-                                <button type="button" data-tw-toggle="modal" data-tw-target="#delete-modal-preview-{{$student->id}}" class="btn btn-danger py-1 px-2 mr-2"><i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Hapus</button>
+                                <button type="button" data-tw-toggle="modal" data-tw-target="#delete-modal-preview-{{$student->id}}" class="btn btn-danger py-1 px-2 mr-2"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
                             </div>
                         </td>
                     </tr>

@@ -157,7 +157,7 @@ class StudentController extends Controller
             'nis' => ['required', 'min:5', 'numeric'],
             'nisn' => ['required', 'min:5', 'numeric'],
             'kelas' => ['required', 'min:3',],
-            'tahun' => ['required', 'min:4', 'numeric'],
+            'tahun' => ['required', 'digits:4', 'numeric'],
             'ijazah' => 'max:2048',
             'skhun' => 'max:2048',
             'status' => 'required'
@@ -178,7 +178,7 @@ class StudentController extends Controller
             'kelas.min' => 'Kolom kelas tidak boleh kurang dari 3 karakter.',
             'tahun.required' => 'Kolom Tahun harus diisi.',
             'tahun.numeric' => 'Kolom Tahun harus angka.',
-            'tahun.min' => 'Kolom Tahun tidak boleh kurang dari 4 angka.',
+            'tahun.digits' => 'Kolom Tahun harus 4 digit.',
         ]);
 
         $student = Student::find($id);

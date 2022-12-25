@@ -20,9 +20,9 @@ use App\Http\Controllers\Dashboard\UserController;
 
 
 //To register
-Route::get('/register', function () {
-    return view('auth.register');
-});
+// Route::get('/register', function () {
+//     return view('auth.register');
+// });
 
 //Verified login
 Route::get('/', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard.index');

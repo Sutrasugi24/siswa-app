@@ -55,15 +55,13 @@
                     <!-- BEGIN: Breadcrumb -->
                     <nav aria-label="breadcrumb" class="-intro-x mr-auto hidden sm:flex">
                         <ol class="breadcrumb">
-                            <li class="breadcrumb-item"><a href="#">Application</a></li>
-                            <li class="breadcrumb-item active" aria-current="page"></li>
                         </ol>
                     </nav>
                     <!-- END: Breadcrumb -->
                     <!-- BEGIN: Account Menu -->
                     <div class="intro-x dropdown w-8 h-8">
                         <div class="dropdown-toggle w-8 h-8 rounded-full overflow-hidden shadow-lg image-fit zoom-in" role="button" aria-expanded="false" data-tw-toggle="dropdown">
-                            <img alt="Midone - HTML Admin Template" src="dist/images/profile-5.jpg">
+                            <img alt="SMAN 6 Cimahi" src="dist/images/profile-5.jpg">
                         </div>
                         <div class="dropdown-menu w-56">
                             <ul class="dropdown-content bg-primary text-white">

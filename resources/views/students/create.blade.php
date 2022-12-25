@@ -96,12 +96,12 @@
                             <label for="status">Status</label>
                         </div>
                         <div class="form-check inline-block">
-                            <input type="radio" name="status" class="form-check-input" value="sudah_diambil" id="sudah_diambil" checked>
-                            <label for="sudah_diambil" class="form-check-label">Sudah Diambil</label>
+                            <input type="radio" name="status" class="form-check-input" value="sudah diambil" id="sudah diambil" checked>
+                            <label for="sudah diambil" class="form-check-label">Sudah Diambil</label>
                         </div>
                         <div class="form-check inline-block">
-                            <input type="radio" name="status" class="form-check-input" value="belum_diambil" id="belum_diambil">
-                            <label for="belum_diambil" class="form-check-label">Belum Diambil</label>
+                            <input type="radio" name="status" class="form-check-input" value="belum diambil" id="belum diambil">
+                            <label for="belum diambil" class="form-check-label">Belum Diambil</label>
                         </div>
                     </div>
                 </div>
