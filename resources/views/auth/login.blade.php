@@ -16,19 +16,13 @@
     </head>
     <!-- END: Head -->
     <body class="login">
-        <div class="container sm:px-10">
-            <div class="block xl:grid grid-cols-2 gap-4">
-                <!-- BEGIN: Login Info -->
-                <div class="hidden xl:flex flex-col min-h-screen">
-
-                </div>
-                <!-- END: Login Info -->
+        <div class="flex justify-center" >
                 <!-- Session Status -->
                 <x-auth-session-status class="mb-4" :status="session('status')" />
                 <!-- BEGIN: Login Form -->
                 <form method="POST" action="{{ route('login') }}" class="h-screen xl:h-auto flex py-5 xl:py-0 my-10 xl:my-0">
                     @csrf
-                    <div class="my-auto mx-auto xl:ml-20 bg-white dark:bg-darkmode-600 xl:bg-transparent px-5 sm:px-8 py-8 xl:p-0 rounded-md shadow-md xl:shadow-none w-full sm:w-3/4 lg:w-2/4 xl:w-auto">
+                    <div class="my-auto mx-auto xl:ml-20 bg-white dark:bg-darkmode-600 xl:bg-transparent px-5 sm:px-8 py-8 xl:p-0 rounded-md shadow-md xl:shadow-none w-full">
                         <h2 class="intro-x font-bold text-2xl xl:text-3xl text-center xl:text-left">
                             Login
                         </h2>                        
@@ -54,7 +48,7 @@
                     </div>
                 </form>
                 <!-- END: Login Form -->
-            </div>
+            
         </div>
         
         <!-- BEGIN: JS Assets-->

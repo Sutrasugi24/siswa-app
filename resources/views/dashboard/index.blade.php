@@ -11,7 +11,6 @@
                         Laporan Keseluruhan
                     </h2>
                     <div class="flex items-center sm:ml-auto mt-3 sm:mt-0">
-                        <button class="btn btn-primary shadow-md mr-2">Unduh</button>
                         <div class="dropdown ml-auto sm:ml-0">
                             <button class="dropdown-toggle btn px-2 box" aria-expanded="false" data-tw-toggle="dropdown">
                                 <span class="w-5 h-5 flex items-center justify-center"> <i class="w-4 h-4" data-lucide="download"></i> </span>
