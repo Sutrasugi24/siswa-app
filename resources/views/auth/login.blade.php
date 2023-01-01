@@ -1,5 +1,81 @@
-
 <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="shugi" content="siswa-app">
+  <title>Database Ijazah dan SKHUN</title>
+
+  <!-- General CSS Files -->
+  <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css" integrity="sha384-fnmOCqbTlWIlj8LyTjo7mOUStjsKC4pOpQbqyi7RrhN7udi9RwhKkMHpvLbHG9Sr" crossorigin="anonymous">
+
+  <!-- CSS Libraries -->
+  <link rel="stylesheet" href="../node_modules/bootstrap-social/bootstrap-social.css">
+
+  <!-- Template CSS -->
+  
+    <title>SMAN 6 Cimahi</title>
+    <!-- BEGIN: CSS Assets-->
+    <link rel="stylesheet" href="{{ asset('/dist/css/app.css') }}" />
+    <link rel="stylesheet" href="{{ asset('/fonts/roboto/') }}" />
+    <link href="{{ asset('/dist/images/logo.svg') }}" rel="shortcut icon">
+</head>
+
+<body>
+  
+    <div id="app" class="login h-screen">
+        <section class="flex sm:mt-5 md:mt-10">
+                <div class="row container">
+                    <div class="col-12 col-sm-8 offset-sm-2 offset-md-3 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4">
+                        <div class="login-brand mb-4 justify-center">
+                            <img src="{{asset('/dist/images/sman6.png')}}" alt="logo" class="mx-auto justify-center">
+                        </div>
+                        <div class="card card-primary">
+                            <div class="card-header text-center">
+                                <h4 class="intro-x font-bold text-xl xl:text-2xl text-center xl:text-left">
+                                SISTEM DATABASE IJAZAH DAN SKHUN
+                            </h4>
+                        </div>
+                        <!-- BEGIN: Login Form -->
+                        <form method="POST" action="{{ route('login') }}" class="h-auto sm:auto md:mx:auto xl:auto px-5 flex">
+                            @csrf
+                            <div class="my-auto mx-auto bg-white xl:bg-transparent rounded-md xl:shadow-none w-full">                     
+                                <div class="intro-x mt-5">
+                                    <!-- Email -->
+                                    <input type="email" for="password" class="intro-x form-control py-3 px-2 block" placeholder="Email" name="email" :value="old('email')" required autofocus>
+                                    <x-input-error :messages="$errors->get('email')" class="mt-2" />
+                                    <!-- Password -->
+                                    <input type="password" id="password" name="password" class="intro-x form-control py-3 px-2 mt-4" placeholder="Password" required autocomplete="current-password">
+                                    <x-input-error :messages="$errors->get('password')" class="mt-2" />
+                                    </div>
+                                    <div class="intro-x flex text-slate-600 dark:text-slate-500 px-4 text-xs sm:text-sm mt-3">
+                                        <div class="flex items-center mr-auto">
+                                            <input id="remember-me" type="checkbox" class="form-check-input border my-auto">
+                                            <label class="cursor-pointer select-none my-auto ml-1" for="remember-me">Remember me</label>
+                                        </div> 
+                                    </div>
+                                    <div class="mt-4 xl:mt-4 text-right xl:text-right mb-8">
+                                        <button type="submit" class="btn btn-primary w-24 mt-3">{{ __('Masuk') }}</button>
+                                    </div>
+                                </div>
+                            </form>
+                            <!-- END: Login Form -->
+                    </div>
+                </div>
+            </div>
+        </section>
+    </div>
+
+  <!-- General JS Scripts -->
+    <script src="https://developers.google.com/maps/documentation/javascript/examples/markerclusterer/markerclusterer.js"></script>
+    <script src="{{asset('/dist/js/app.js')}}"></script>
+</body>
+</html>
+
+
+
+{{-- <!DOCTYPE html>
 <html lang="en" class="light">
     <!-- BEGIN: Head -->
     <head>
@@ -55,7 +131,7 @@
         <script src="{{asset('dist/js/app.js')}}"></script>
         <!-- END: JS Assets-->
     </body>
-</html>
+</html> --}}
 
 
 {{-- <x-guest-layout>

@@ -71,10 +71,10 @@
                         </td>
                         <td class="table-report__action w-auto">
                             <div class="flex justify-center items-center">
-                                <a class="flex items-center mr-3" href="{{ route('students.edit', $student->id) }}">
+                                <a class="flex items-center mr-3" title="Ubah data!" href="{{ route('students.edit', $student->id) }}">
                                     <i data-lucide="edit" class="w-4 h-4 mr-1"></i>
                                 </a>
-                                <button type="button" data-tw-toggle="modal" data-tw-target="#delete-modal-preview-{{$student->id}}" class="btn btn-danger py-1 px-2 mr-2"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
+                                <button type="button" title="Hapus data!" data-tw-toggle="modal" data-tw-target="#delete-modal-preview-{{$student->id}}" class="btn btn-danger py-1 px-2 mr-2"><i data-lucide="trash-2" class="w-4 h-4"></i></button>
                             </div>
                         </td>
                     </tr>
