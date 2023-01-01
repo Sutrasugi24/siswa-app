@@ -59,10 +59,10 @@
                         <td class="font-medium whitespace-nowrap text-sm text-center">{{ $student->kelas }}</td>
                         <td class="font-medium whitespace-nowrap text-sm text-center">{{ $student->tahun }}</td>
                         <td class="w-auto text-center">
-                            <a href="{{ route('students.ijazah', $student->id) }}" class="flex whitespace-nowrap justify-center items-center text-success"><i data-lucide="eye" class="w-4 h-4 mr-1"></i></a>
+                            <a href="{{ route('students.ijazah', $student->id) }}" title="Lihat data Ijazah!" class="flex whitespace-nowrap justify-center items-center text-success"><i data-lucide="eye" class="w-4 h-4 mr-1"></i></a>
                         </td>
                         <td class="w-auto text-center">
-                            <a href="{{ route('students.skhun', $student->id) }}" class="flex whitespace-nowrap justify-center items-center text-success"><i data-lucide="eye" class="w-4 h-4 mr-1"></i></a>
+                            <a href="{{ route('students.skhun', $student->id) }}" title="Lihat data SKHUN!" class="flex whitespace-nowrap justify-center items-center text-success"><i data-lucide="eye" class="w-4 h-4 mr-1"></i></a>
                         </td>
                         <td class="w-auto text-center">
                             <div class="flex whitespace-wrap justify-center {{ $student['status'] == 'sudah diambil' ? 'text-success' : 'text-danger' }}">
@@ -89,12 +89,12 @@
                     <h3 class="text-slate-700 text-lg font-normal mt-2">Apakah ingin menghapus {{ $student->nama }}?</h3>
                 </div>
                 <div class="p-6 mb-4 text-center mx-auto">
+                    <button type="button" data-tw-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1 mx-auto">Cancel</button>
                     <form method="POST" class="inline-flex mx-auto" action="{{ route('students.destroy', $student->id) }}">
                         @csrf
                         @method('DELETE')
                         <button type="submit" class="btn btn-danger w-24">Hapus</button>
                     </form>
-                    <button type="button" data-tw-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1 mx-auto">Cancel</button>
                 </div>
             </div>
         </div>

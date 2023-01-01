@@ -67,12 +67,12 @@
                     <h3 class="text-slate-700 text-lg font-normal mt-2">Apakah ingin menghapus {{ $user->name }}?</h3>
                 </div>
                 <div class="p-6 mb-4 text-center mx-auto">
+                    <button type="button" data-tw-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1 mx-auto">Cancel</button>
                     <form method="POST" class="inline-flex mx-auto" action="{{ route('users.destroy', $user->id) }}">
                         @csrf
                         @method('DELETE')
                         <a id="deleteLink" type="submit" class="btn btn-danger w-24">Hapus</a>
                     </form>
-                    <button type="button" data-tw-dismiss="modal" class="btn btn-outline-secondary w-24 mr-1 mx-auto">Cancel</button>
                 </div>
             </div>
         </div>

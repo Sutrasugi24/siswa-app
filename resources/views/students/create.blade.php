@@ -95,7 +95,7 @@
                         <div class="form-group mb-0">
                             <label for="status">Status</label>
                         </div>
-                        <div class="form-check inline-block">
+                        <div class="form-check inline-block mr-2 mt-2">
                             <input type="radio" name="status" class="form-check-input" value="sudah diambil" id="sudah diambil" checked>
                             <label for="sudah diambil" class="form-check-label">Sudah Diambil</label>
                         </div>
