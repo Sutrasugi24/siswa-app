@@ -50,29 +50,15 @@
                                 <a href="javascript:;"  class="btn btn-primary">Show Modal</a>
                             </div> --}}
                             <!-- END: Modal Toggle -->
-                            <button onclick="handleDelete({{ $user->id }})" type="submit" data-tw-toggle="modal" data-tw-target="#delete-modal-preview" class="btn btn-danger py-1 px-2 mr-2"><i data-lucide="trash-2" class="w-4 h-4 mr-1"></i> Hapus</button>
+                            <button type="button" title="Hapus data!" data-tw-toggle="modal" data-tw-target="#delete-modal-preview-{{$user->id}}" class="btn btn-danger py-1 px-2 mr-2"><i data-lucide="trash-2" class="w-5 h-5"></i></button>
                         @endif
                         </div>
                     </div>
                 </div>
             </div>
-            @endforeach
-            <!-- BEGIN: Users Layout -->
-            <!-- BEGIN: Pagination -->
-            <div class="intro-y col-span-12 mx-auto flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
-                <nav class="w-full sm:w-auto sm:mr-auto">
-                    
-                </nav>
-            </div>
-            <!-- END: Pagination -->
-        </div>
-    </div>
-    <!-- END: Content -->
-</div>
-
 
 <!-- BEGIN: Modal Content -->
-<div id="delete-modal-preview" class="modal" tabindex="-1" aria-hidden="true">
+<div id="delete-modal-preview-{{$user->id}}" class="modal" tabindex="-1" aria-hidden="true">
     <div class="modal-dialog">
         <div class="modal-content">
             <div class="modal-body p-2">
@@ -92,6 +78,21 @@
         </div>
     </div>
 </div>
+            @endforeach
+            <!-- BEGIN: Users Layout -->
+            <!-- BEGIN: Pagination -->
+            <div class="intro-y col-span-12 mx-auto flex flex-wrap sm:flex-row sm:flex-nowrap items-center">
+                <nav class="w-full sm:w-auto sm:mr-auto">
+                    
+                </nav>
+            </div>
+            <!-- END: Pagination -->
+        </div>
+    </div>
+    <!-- END: Content -->
+</div>
+
+
 
 @endsection
 
