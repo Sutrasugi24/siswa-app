@@ -23,6 +23,12 @@
                                     <li>
                                         <a href="/exportpdf" class="dropdown-item"> <i data-lucide="file-text" class="w-4 h-4 mr-2"></i> Export PDF </a>
                                     </li>
+                                    <li>
+                                        <a href="/download-ijazah" class="dropdown-item"> <i data-lucide="file-text" class="w-4 h-4 mr-2"></i> Download Ijazah </a>
+                                    </li>
+                                    <li>
+                                        <a href="/download-skhun" class="dropdown-item"> <i data-lucide="file-text" class="w-4 h-4 mr-2"></i> Download SKHUN </a>
+                                    </li>
                                 </ul>
                             </div>
                         </div>

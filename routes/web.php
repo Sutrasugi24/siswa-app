@@ -34,6 +34,11 @@ Route::get('/exportpdf', [DashboardController::class, 'exportpdf'])->name('expor
 Route::get('/exportexcel', [DashboardController::class, 'exportexcel'])->name('exportexcel');
 
 
+Route::get('/download-ijazah', 'App\Http\Controllers\ZipController@downloadZip')->name('download.zip');
+Route::get('/download-skhun', 'App\Http\Controllers\SkhunController@downloadZip')->name('skhun.zip');
+
+
+
 //Students Route
 Route::middleware('auth')->group(function (){
     Route::get('/students', [StudentController::class, 'index'])->name('students.index');
